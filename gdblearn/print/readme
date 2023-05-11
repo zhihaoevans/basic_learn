@@ -1,0 +1,22 @@
+p array[index]@num -- print continuous elements in arr
+set print array-indexes on -- when print a array, print index
+bt full -- show local vars's value in function call chain
+i locals -- show local vars's value in current frame
+i proc mappings -- print memory mappings
+p 'static-1.c'::var -- print var in a file
+whatis var -- show type of var
+ptype var -- show type of var in detail
+i variables var -- show files which define the var
+x/nfu addr -- print the value of a section of memory
+	n: the number of units
+	f: output format
+		x: base 6
+		o: base 8
+	u: length of unit
+		b: byte
+		h: two bytes
+		w: for bytes
+		g: eight bytes
+l linenum/funcname -- print source code
+set print pretty on -- print struct var in a readable format
+	

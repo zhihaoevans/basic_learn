@@ -1,0 +1,3 @@
+break gdb_main
+break captured_main
+break captured_command_loop

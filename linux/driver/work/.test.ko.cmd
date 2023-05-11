@@ -1,0 +1,1 @@
+cmd_/root/learn/linux/driver/work/test.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /root/learn/linux/driver/work/test.ko /root/learn/linux/driver/work/test.o /root/learn/linux/driver/work/test.mod.o

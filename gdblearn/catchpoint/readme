@@ -1,0 +1,2 @@
+catchpoints -- catch events when program running
+catch syscall [name | number] -- catch syscall assigned by name or number

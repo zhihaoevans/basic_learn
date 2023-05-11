@@ -1,0 +1,7 @@
+watch var -- when var changed,programe stop
+watch *(data type*)address -- watch a addr, similar to watch var
+info watchpoints -- see watchpoints 
+disable,enable,delete watchpoint -- similar to breakpoints
+watch var thread threadnum -- take effect for specific thread(must be hardware watchpoins)
+rw var -- read watchpoints stop when program access var(must be hardware watchpoints)
+aw var -- read/write watchpoints stop when program access var or change var (must be hd watchpoints)

@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/root/learn/meson/build",
+    "command": "cc -Idemo.p -I. -I.. -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ demo.p/main.c.o -MF demo.p/main.c.o.d -o demo.p/main.c.o -c ../main.c",
+    "file": "../main.c",
+    "output": "demo.p/main.c.o"
+  }
+]
