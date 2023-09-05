@@ -5,7 +5,7 @@
 #include <fcntl.h>
 
 int main() {
-
+    
     int fd;
     fd = open("/dev/tty0", O_RDWR);
     if(fd < 0){
