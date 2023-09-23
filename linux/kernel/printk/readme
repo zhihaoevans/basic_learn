@@ -1,0 +1,10 @@
+dynamic debug:
+
+    first of all:
+    config kernel dynamic debug and recompile it 
+
+
+    1.insmod pr_dgb.ko
+    2.cat /sys/kernel/debug/dynamic_debug/control | grep pr_dbg     
+    3.echo "file pr_dbg.c +p" > /sys/kernel/debug/dynamic_debug/control 
+    4 dmesg | tail

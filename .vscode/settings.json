@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "sshd_config": "ssh_config",
-        "signal.h": "c"
+        "signal.h": "c",
+        "errno.h": "c"
     }
 }
