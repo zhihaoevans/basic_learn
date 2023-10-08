@@ -3,5 +3,6 @@
         "sshd_config": "ssh_config",
         "signal.h": "c",
         "errno.h": "c"
+        "stat.h": "c"
     }
 }
