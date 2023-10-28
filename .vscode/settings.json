@@ -2,6 +2,7 @@
     "files.associations": {
         "sshd_config": "ssh_config",
         "signal.h": "c",
-        "stat.h": "c"
+        "stat.h": "c",
+        "stdio.h": "c"
     }
 }
