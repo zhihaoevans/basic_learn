@@ -2,6 +2,31 @@
     "files.associations": {
         "sshd_config": "ssh_config",
         "signal.h": "c",
-        "stat.h": "c"
-    }
+        "stat.h": "c",
+        "myfifo.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "malloc.h": "c",
+        "pthread.h": "c"
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#85374d",
+        "activityBar.background": "#85374d",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#0d1709",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#85374d",
+        "statusBar.background": "#612838",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#85374d",
+        "statusBarItem.remoteBackground": "#612838",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#612838",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#61283899",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#612838"
 }
