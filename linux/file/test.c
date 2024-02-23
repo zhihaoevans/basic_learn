@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#if 0
 int main() {
     int fd1, fd2;
 
@@ -33,5 +34,16 @@ int main() {
     // 输出读取的内容
     write(STDOUT_FILENO, buf, num_read);
 
+    return 0;
+}
+#endif
+
+/* test if fprintf overlay */
+int main(void){
+    FILE *fp;
+	fp = fopen("./test.txt", "w");
+    fprintf(fp,"hello\n");
+    fprintf(fp,"world\n");
+    fclose(fp);
     return 0;
 }

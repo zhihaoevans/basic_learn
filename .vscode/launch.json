@@ -9,7 +9,7 @@
             "name": "(gdb) learn",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/root/learn/gdblearn/func/framefunc",
+            "program": "${workspaceFolder}/intel/tsc_test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
