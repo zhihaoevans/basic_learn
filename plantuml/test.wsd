@@ -1,0 +1,16 @@
+@startuml
+skinparam sequenceMessageAlign right
+skinparam responseMessageBelowArrow true
+autonumber 1 2
+actor Bob order 20 #Red
+' The only difference between actor
+'and participant is the drawing
+database Alice order 10
+participant "I have a really\nlong name" as L  order 30 #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name" #99FF99
+'/
+Alice-\\o Bob: Authentication Request
+Bob<[#red]->Alice: Authentication Response
+Bob->L: Log transaction
+@enduml

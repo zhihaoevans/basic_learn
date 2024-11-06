@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.cmake": "makefile",
         "sshd_config": "ssh_config",
         "signal.h": "c",
         "stat.h": "c",
@@ -7,7 +8,8 @@
         "string.h": "c",
         "stdio.h": "c",
         "malloc.h": "c",
-        "pthread.h": "c"
+        "pthread.h": "c",
+        "iostream": "cpp"
     },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#85374d",

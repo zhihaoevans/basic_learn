@@ -1,0 +1,52 @@
+@startuml
+start
+
+:初始化程序;
+:解析命令行参数;
+if (是否打印版本?) then (是)
+  :打印版本号;
+  :退出程序;
+else (否)
+  :获取任务类型;
+  if (是否调试模式?) then (是)
+    :执行 read_pcap_main;
+  else (否)
+    :检查任务完成状态;
+    while (任务未完成)
+      :创建子进程;
+      if (是子进程?) then (是)
+        :执行 read_pcap_main;
+        :子进程退出;
+      else (父进程)
+        :等待子进程结束;
+      endif
+      :等待1秒;
+    endwhile
+  endif
+endif
+
+note right
+read_pcap_main 方法会根据任务类型
+执行不同的解析方法
+end note
+
+partition read_pcap_main {
+  :创建 pcap_data_offline 对象;
+  :初始化并启动线程;
+  :等待初始化;
+  :根据任务类型执行操作;
+}
+
+partition read_index_file {
+  :打开索引文件;
+  if (索引文件打开成功?) then (是)
+    :处理索引文件;
+    :更新数据库;
+    :处理每个文件;
+    :发送日志;
+  else (否)
+    :返回;
+  endif
+}
+
+@enduml
