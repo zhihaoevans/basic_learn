@@ -1,0 +1,16 @@
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/auto_decltype.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/lambda_examples.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/smart_pointers.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/rvalue_move.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/variadic_templates.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/range_based_for.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/nullptr_example.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/enum_class.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/thread_example.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/initializer_lists.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/basic_types.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/class_basics.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/template_basics.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/stl_examples.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/edit_cache.dir
+/Users/xzh/code/learn/basic_learn/cpp/cpptest/build/CMakeFiles/rebuild_cache.dir
