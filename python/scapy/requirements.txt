@@ -1,0 +1,82 @@
+# Scapy库完整演示程序依赖包
+# 安装命令: pip install -r requirements.txt
+
+# 核心网络包处理库
+scapy>=2.4.5
+
+# 网络接口信息获取
+netifaces>=0.11.0
+
+# 加密和哈希功能
+cryptography>=3.4.8
+
+# 数据可视化 (用于网络流量图表)
+matplotlib>=3.5.0
+numpy>=1.21.0
+
+# 系统信息获取
+psutil>=5.8.0
+
+# 颜色输出支持
+colorama>=0.4.4
+
+# 进度条显示
+tqdm>=4.62.0
+
+# 网络工具扩展
+python-nmap>=0.7.1
+
+# 异步网络操作 (可选)
+aiohttp>=3.8.0
+
+# JSON处理增强 (可选)
+orjson>=3.6.0
+
+# 时间处理 (可选)
+python-dateutil>=2.8.0
+
+# 配置文件处理 (可选)
+PyYAML>=6.0
+
+# 日志增强 (可选)
+loguru>=0.6.0
+
+# 命令行参数解析增强 (可选)
+click>=8.0.0
+
+# 表格美化输出 (可选)
+tabulate>=0.9.0
+
+# 网络地址处理 (可选)
+netaddr>=0.8.0
+
+# DNS解析增强 (可选)
+dnspython>=2.2.0
+
+# HTTP请求库 (用于某些演示)
+requests>=2.28.0
+
+# 正则表达式增强 (可选)
+regex>=2022.0.0
+
+# 并发处理 (可选)
+concurrent-futures>=3.1.1
+
+# 内存分析 (可选)
+memory-profiler>=0.60.0
+
+# 性能分析 (可选)
+line-profiler>=4.0.0
+
+# 注意事项:
+# 1. 某些包在不同操作系统上可能需要额外的系统依赖
+# 2. Windows用户可能需要安装 Npcap 或 WinPcap
+# 3. Linux用户可能需要安装 libpcap-dev
+# 4. macOS用户通常已包含必要的系统库
+# 5. 无线功能可能需要额外的驱动支持
+
+# 可选的系统级依赖 (需要单独安装):
+# - Wireshark (用于高级包分析)
+# - Nmap (用于网络扫描)
+# - Aircrack-ng (用于无线网络测试)
+# - tcpdump (用于包捕获)
