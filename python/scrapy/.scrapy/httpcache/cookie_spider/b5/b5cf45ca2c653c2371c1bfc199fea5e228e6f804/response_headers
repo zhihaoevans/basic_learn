@@ -1,0 +1,8 @@
+Content-Length: 223
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Date: Thu, 11 Sep 2025 07:04:51 GMT
+Location: /cookies
+Server: gunicorn/19.9.0
+Set-Cookie: session_id=abc123; Path=/

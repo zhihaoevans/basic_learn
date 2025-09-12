@@ -1,0 +1,6 @@
+Content-Length: 30
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+Content-Type: text/plain
+Date: Thu, 11 Sep 2025 07:05:07 GMT
+Server: gunicorn/19.9.0

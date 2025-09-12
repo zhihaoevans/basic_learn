@@ -1,0 +1,6 @@
+Accept: application/json
+Content-Type: application/json
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://quotes.toscrape.com/api/quotes
