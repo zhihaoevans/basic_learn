@@ -1,2 +1,3 @@
 # basic_learn
-basic of linux programming
+basic learning of linux programming
+
