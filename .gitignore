@@ -1,6 +1,7 @@
 *.o
 *.ko
 *.s
+!assemble/x86_64/**/*.s
 *.cmd
 *.symvers
 *.order
