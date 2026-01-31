@@ -22,7 +22,11 @@ c/
 ## 运行方式
 
 ```bash
-# 以单文件为例
+# 使用 Makefile 在 c/ 目录下构建所有示例并把可执行文件放到 bin/
+make -C c
+# 或构建单个示例（在 c/ 目录）
+make -C c all
+# 以单文件为例（不使用 make）
 cc array/test.c -o array_test
 ./array_test
 ```
