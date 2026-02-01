@@ -2,7 +2,7 @@
 # Compiles all .c files (excluding c/std/) into c/bin with filenames preserving path
 
 CC ?= cc
-CFLAGS ?= -O2 -Wall -Wextra -std=c11
+CFLAGS ?= -O2 -Wall -Wextra -std=c17
 BIN_DIR := bin
 
 # Find .c sources, exclude std/ directory
@@ -13,7 +13,11 @@ all: $(BIN_DIR) $(SRCS)
 	@echo "Building C examples..."
 	@for src in $(SRCS); do \
 		out="$(BIN_DIR)/$$(echo $$src | sed 's|^\./||' | sed 's|/|_|g' | sed 's|.c$$||')"; \
-		$(CC) $(CFLAGS) "$$src" -o "$$out" || exit 1; \
+		if echo "$$src" | grep -q 'math/'; then \
+			$(CC) $(CFLAGS) "$$src" -o "$$out" -lm || exit 1; \
+		else \
+			$(CC) $(CFLAGS) "$$src" -o "$$out" || exit 1; \
+		fi; \
 		echo "built $$out"; \
 	done
 
