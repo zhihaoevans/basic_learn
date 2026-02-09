@@ -1,0 +1,161 @@
+name: Google Suites CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    name: Build and Test (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: Ubuntu GCC-11
+            cc: gcc-11
+            cxx: g++-11
+            generator: Ninja
+          - os: ubuntu-latest
+            name: Ubuntu Clang-14
+            cc: clang-14
+            cxx: clang++-14
+            generator: Ninja
+          - os: macos-latest
+            name: macOS AppleClang
+            cc: clang
+            cxx: clang++
+            generator: Ninja
+          - os: windows-latest
+            name: Windows MSVC v142
+            cc: cl
+            cxx: cl
+            generator: Visual Studio
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ubuntu toolchains
+        if: startsWith(matrix.name, 'Ubuntu')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build cmake lcov python3-pip
+          if [[ "${{ matrix.name }}" == "Ubuntu GCC-11" ]]; then
+            sudo apt-get install -y gcc-11 g++-11
+          else
+            sudo apt-get install -y clang-14
+          fi
+
+      - name: Setup macOS dependencies
+        if: startsWith(matrix.name, 'macOS')
+        run: |
+          brew update
+          brew install ninja cmake || true
+
+      - name: Setup Windows MSVC
+        if: startsWith(matrix.name, 'Windows')
+        shell: pwsh
+        run: |
+          choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"' -y
+
+      - name: Configure gtest_example
+        shell: bash
+        run: |
+          cd cpp/google_suites/gtest_example
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            cmake -S . -B build -A x64 -T v142
+          else
+            cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G "${{ matrix.generator }}" -DCMAKE_C_COMPILER=${{ matrix.cc }} -DCMAKE_CXX_COMPILER=${{ matrix.cxx }}
+          fi
+
+      - name: Build gtest_example
+        shell: bash
+        run: |
+          cmake --build cpp/google_suites/gtest_example/build --config Debug -j
+
+      - name: Test gtest_example
+        shell: bash
+        run: |
+          ctest --test-dir cpp/google_suites/gtest_example/build -C Debug --output-on-failure
+
+      - name: Configure benchmark_example
+        shell: bash
+        run: |
+          cd cpp/google_suites/benchmark_example
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            cmake -S . -B build -A x64 -T v142
+          else
+            cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G "${{ matrix.generator }}" -DCMAKE_C_COMPILER=${{ matrix.cc }} -DCMAKE_CXX_COMPILER=${{ matrix.cxx }}
+          fi
+
+      - name: Build benchmark_example
+        shell: bash
+        run: |
+          cmake --build cpp/google_suites/benchmark_example/build --config Release -j
+
+      - name: Run benchmark and export JSON
+        shell: bash
+        run: |
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            ./cpp/google_suites/benchmark_example/build/Release/bench_suite.exe --benchmark_out=benchmark_${{ matrix.os }}.json --benchmark_out_format=json
+          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            ./cpp/google_suites/benchmark_example/build/bench_suite --benchmark_out=benchmark_${{ matrix.os }}.json --benchmark_out_format=json
+          else
+            ./cpp/google_suites/benchmark_example/build/bench_suite --benchmark_out=benchmark_${{ matrix.name }}.json --benchmark_out_format=json
+          fi
+
+      - name: Upload benchmark JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-report-${{ matrix.name }}
+          path: |
+            benchmark_*.json
+          if-no-files-found: warn
+
+      - name: Configure glog_example
+        shell: bash
+        run: |
+          cd cpp/google_suites/glog_example
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            cmake -S . -B build -A x64 -T v142
+          else
+            cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G "${{ matrix.generator }}" -DCMAKE_C_COMPILER=${{ matrix.cc }} -DCMAKE_CXX_COMPILER=${{ matrix.cxx }}
+          fi
+
+      - name: Build glog_example
+        shell: bash
+        run: |
+          cmake --build cpp/google_suites/glog_example/build --config Release -j
+
+      - name: Run glog_example
+        shell: bash
+        run: |
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            ./cpp/google_suites/glog_example/build/Release/logging_example.exe logs_ci
+          else
+            ./cpp/google_suites/glog_example/build/logging_example logs_ci
+          fi
+
+  coverage:
+    name: Coverage (Ubuntu GCC-11)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-11 g++-11 ninja-build cmake python3-pip
+          python3 -m pip install gcovr
+      - name: Configure with coverage
+        run: |
+          cd cpp/google_suites/gtest_example
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G Ninja -DCMAKE_C_COMPILER=gcc-11 -DCMAKE_CXX_COMPILER=g++-11 -DENABLE_COVERAGE=ON
+      - name: Build
+        run: cmake --build cpp/google_suites/gtest_example/build -j
+      - name: Test
+        run: ctest --test-dir cpp/google_suites/gtest_example/build --output-on-failure
+      - name: Coverage threshold
+        run: |
+          gcovr -r cpp/google_suites/gtest_example -e 'tests/.*' --txt --fail-under-line 90
