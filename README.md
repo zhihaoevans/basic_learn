@@ -11,8 +11,8 @@
 - [lua](lua/README.md) - Lua 语言示例
 - [python](python/README.md) - Python 示例与框架
 - [rust](rust/README.md) - Rust 示例
-- [shell](shell/README.md) - Shell 脚本示例
-- [sed](sed/README.md) - sed 示例
+- [scripts/shell](scripts/shell/README.md) - Shell 脚本示例
+- [scripts/sed](scripts/sed/README.md) - sed 示例
 - [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
 - [docs/markdown](docs/markdown/README.md) - Markdown 示例
 - [cpp/protobuf](cpp/protobuf/README.md) - Protobuf 示例
