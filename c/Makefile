@@ -5,8 +5,8 @@ CC ?= cc
 CFLAGS ?= -O2 -Wall -Wextra -std=c17
 BIN_DIR := bin
 
-# Find .c sources, exclude std/ directory
-SRCS := $(shell find . -name '*.c' -not -path './std/*')
+# Find .c sources, exclude std/, gcc/, and preprocessor/ directories
+SRCS := $(shell find . -name '*.c' -not -path './std/*' -not -path './gcc/*' -not -path './preprocessor/*')
 
 .PHONY: all clean
 all: $(BIN_DIR) $(SRCS)

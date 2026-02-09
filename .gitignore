@@ -10,9 +10,7 @@
 *.log
 **/.DS_Store
 c/bin/
-cpp/**/build/
-framework/**/build/
-meson/build/
+**/build/
 python/scrapy/.scrapy/
 python/.ipynb_checkpoints/
 java/out/

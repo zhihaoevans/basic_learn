@@ -3,7 +3,7 @@
 
 ## 语言目录索引
 
-- [assemble](assemble/README.md) - 汇编语言示例
+- [assembly](assembly/README.md) - 汇编语言示例
 - [c](c/README.md) - C 语言基础与标准库示例
 - [cpp](cpp/README.md) - C++ 示例与进阶主题
 - [golang](golang/README.md) - Go 语言基础示例
@@ -13,7 +13,7 @@
 - [rust](rust/README.md) - Rust 示例
 - [shell](shell/README.md) - Shell 脚本示例
 - [sed](sed/README.md) - sed 示例
-- [makefile](makefile/README.md) - Makefile 模板
+- [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
 - [markdown](markdown/README.md) - Markdown 示例
-- [protobuf](protobuf/README.md) - Protobuf 示例
-- [macro](macro/README.md) - C 宏示例
+- [cpp/protobuf](cpp/protobuf/README.md) - Protobuf 示例
+- [c/preprocessor](c/preprocessor/README.md) - C 宏示例
