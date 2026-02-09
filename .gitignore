@@ -1,7 +1,7 @@
 *.o
 *.ko
 *.s
-!assemble/x86_64/**/*.s
+!assembly/x86_64/**/*.s
 *.cmd
 *.symvers
 *.order
@@ -10,3 +10,11 @@
 *.log
 **/.DS_Store
 c/bin/
+cpp/**/build/
+framework/**/build/
+meson/build/
+python/scrapy/.scrapy/
+python/.ipynb_checkpoints/
+java/out/
+*.class
+rust/**/target/

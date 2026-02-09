@@ -1,6 +1,0 @@
-Content-Length: 33
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Origin: *
-Content-Type: application/json
-Date: Thu, 11 Sep 2025 07:04:43 GMT
-Server: gunicorn/19.9.0

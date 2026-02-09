@@ -3,11 +3,11 @@ name: assemble-x86_64
 on:
   push:
     paths:
-      - 'assemble/**'
+      - 'assembly/**'
       - '.github/workflows/assemble-x86_64.yml'
   pull_request:
     paths:
-      - 'assemble/**'
+      - 'assembly/**'
       - '.github/workflows/assemble-x86_64.yml'
   workflow_dispatch:
 
@@ -19,9 +19,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build x86_64 examples
-        run: make -C assemble/x86_64
+        run: make -C assembly/x86_64
 
       - name: Smoke run
         run: |
-          ./assemble/x86_64/01_basics/hello_write
-          ./assemble/x86_64/01_basics/exit_code || true
+          ./assembly/x86_64/01_basics/hello_write
+          ./assembly/x86_64/01_basics/exit_code || true

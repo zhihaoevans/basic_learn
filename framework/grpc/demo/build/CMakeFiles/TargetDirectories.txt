@@ -1,4 +1,0 @@
-/Users/xzh/code/learn/basic_learn/framework/grpc/demo/build/CMakeFiles/server.dir
-/Users/xzh/code/learn/basic_learn/framework/grpc/demo/build/CMakeFiles/client.dir
-/Users/xzh/code/learn/basic_learn/framework/grpc/demo/build/CMakeFiles/edit_cache.dir
-/Users/xzh/code/learn/basic_learn/framework/grpc/demo/build/CMakeFiles/rebuild_cache.dir
