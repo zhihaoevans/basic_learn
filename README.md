@@ -14,6 +14,16 @@
 - [shell](shell/README.md) - Shell 脚本示例
 - [sed](sed/README.md) - sed 示例
 - [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
-- [markdown](markdown/README.md) - Markdown 示例
+- [docs/markdown](docs/markdown/README.md) - Markdown 示例
 - [cpp/protobuf](cpp/protobuf/README.md) - Protobuf 示例
 - [c/preprocessor](c/preprocessor/README.md) - C 宏示例
+ 
+## 文档与图示
+- [docs/drawio](docs/drawio) - Drawio 绘图
+- [docs/plantuml](docs/plantuml) - PlantUML 图示
+- [docs/mermaid](docs/mermaid) - Mermaid 图示
+- [docs/gdb](docs/gdb) - GDB 学习与笔记
+- [docs/intel](docs/intel) - Intel 架构相关资料
+ 
+## Web
+- [web/frontend](web/frontend) - 前端示例与练习
