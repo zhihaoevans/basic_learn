@@ -34,3 +34,12 @@ jobs:
         run: |
           cd languages/go
           go test ./... -v
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run Rust tests
+        run: |
+          cd languages/rust
+          cargo test --quiet

@@ -18,4 +18,11 @@ else
   echo "==> Skipping Go tests (go not found)"
 fi
 
+if command -v cargo >/dev/null 2>&1; then
+  echo "==> Running Rust tests"
+  bash -lc 'cd languages/rust && cargo test -q'
+else
+  echo "==> Skipping Rust tests (cargo not found)"
+fi
+
 echo "All selected tests finished."
