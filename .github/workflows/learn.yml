@@ -1,0 +1,16 @@
+name: learn-basic
+on:
+  push:
+  pull_request:
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y build-essential
+      - run: make -C c/chapters/01_basics test
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest discover -v -s python/chapters/01_basics -p "test_*.py"
