@@ -1,11 +1,11 @@
-# 编程语言基础学习仓库
+# 编程语言与基础技术学习仓库
 
-- 目标：以统一章节结构，逐步构建多语言的“基础语法与核心概念”示例、练习与测试。
-- 支持语言（首批）：Python、JavaScript、Go、Rust（后续扩展：Java、C/C++、Shell）。
+- 作用：汇总编程语言、Shell/Linux、文档图示等基础学习示例、练习与测试，方便按章节循序学习。
+- 当前内容：Python、JavaScript、Go、Rust，以及 C/C++、Java、Shell、前端和各类文档示例。
 - 要求：示例与测试本地通过，CI 通过后再推送远程。
 
 ## 快速开始
-- 查看总体方案：[plan-programming-basics.md](file:///Volumes/DATA/code/learn/basic_learn/.trae/documents/plan-programming-basics.md)
+- 查看总体说明：[docs/overview.md](docs/overview.md)
 - 目录说明：
   - /languages：各语言代码与测试
   - /scripts：统一运行与工具脚本
