@@ -1,0 +1,26 @@
+name: shell
+
+on:
+  push:
+    paths:
+      - 'scripts/shell/**'
+      - '.github/workflows/shell.yml'
+  pull_request:
+    paths:
+      - 'scripts/shell/**'
+      - '.github/workflows/shell.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run every script
+        run: |
+          find scripts/shell -name '*.sh' | sort | while read -r f; do
+            echo "== $f =="
+            bash "$f"
+          done
