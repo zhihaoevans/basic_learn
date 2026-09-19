@@ -1,0 +1,38 @@
+name: typescript
+
+on:
+  push:
+    paths:
+      - 'typescript/**'
+      - '.github/workflows/typescript.yml'
+  pull_request:
+    paths:
+      - 'typescript/**'
+      - '.github/workflows/typescript.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # typescript/ 目录待 Phase 2 落地；落地前空转通过
+      - name: Run every example
+        run: |
+          if compgen -G "typescript/src/*.ts" > /dev/null; then
+            cd typescript
+            npm ci --no-audit --no-fund
+            for f in src/*.ts; do
+              echo "== $f =="
+              npx tsx "$f"
+            done
+          else
+            echo "暂无 TypeScript 示例，空转通过（Phase 2 落地后自动生效）"
+          fi

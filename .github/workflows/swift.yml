@@ -1,0 +1,29 @@
+name: swift
+
+on:
+  push:
+    paths:
+      - 'swift/**'
+      - '.github/workflows/swift.yml'
+  pull_request:
+    paths:
+      - 'swift/**'
+      - '.github/workflows/swift.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # swift/ 当前为本地项目未纳入版本管理；纳入后本 workflow 自动生效
+      - name: Build swift package
+        run: |
+          if [ -f swift/Package.swift ]; then
+            cd swift
+            swift build
+          else
+            echo "swift/ 未纳入版本管理或暂无 Package.swift，空转通过"
+          fi
