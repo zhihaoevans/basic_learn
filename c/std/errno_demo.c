@@ -19,6 +19,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdint.h>
 
 // 演示基本的errno使用
 void demo_basic_errno(void) {
