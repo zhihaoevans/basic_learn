@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'golang/**'
+      - 'languages/go/**'
       - '.github/workflows/golang.yml'
   pull_request:
     paths:
       - 'golang/**'
+      - 'languages/go/**'
       - '.github/workflows/golang.yml'
   workflow_dispatch:
 
@@ -29,3 +31,9 @@ jobs:
             go vet "$f"
             go run "$f"
           done
+
+      # languages/go 为早期章节式练习（go.mod 已补齐），以单元测试验证
+      - name: Test languages/go
+        run: |
+          cd languages/go
+          go test ./...
