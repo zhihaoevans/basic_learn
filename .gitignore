@@ -16,3 +16,11 @@ python/.ipynb_checkpoints/
 java/out/
 *.class
 rust/**/target/
+# IDE
+**/.idea/
+*.iml
+# Swift / macOS 构建产物
+**/.build/
+*.app/
+# C 临时目录
+c/tmp/

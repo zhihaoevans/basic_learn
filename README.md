@@ -1,28 +1,65 @@
-# 编程语言基础学习仓库
+# basic_learn
 
-- 目标：以统一章节结构，逐步构建多语言的“基础语法与核心概念”示例、练习与测试。
-- 支持语言（首批）：Python、JavaScript、Go、Rust（后续扩展：Java、C/C++、Shell）。
-- 要求：示例与测试本地通过，CI 通过后再推送远程。
+常用编程语言基础语法示例集合，面向教学分享：每门语言按统一主题清单组织，一个主题一个可运行示例，CI 保障所有示例可构建、可运行、不腐烂。
 
-## 快速开始
-- 查看总体方案：[plan-programming-basics.md](file:///Volumes/DATA/code/learn/basic_learn/.trae/documents/plan-programming-basics.md)
-- 目录说明：
-  - /languages：各语言代码与测试
-  - /scripts：统一运行与工具脚本
-  - /docs：通用文档与章节索引
-  - /.github/workflows：CI 工作流
+- 主题清单见 [TOPICS.md](TOPICS.md)
+- 每个示例文件头注释包含：主题说明、运行命令、预期输出
+- 想贡献新示例？按 TOPICS.md 的主题编号放入对应语言目录，CI 会自动验证
 
-## 运行测试（首批）
-- Python：
-  - 进入仓库根目录，执行：
-    ```bash
-    python -m unittest discover -s languages/python/tests
-    ```
-- 统一入口（创建后）：
-  ```bash
-  bash scripts/run_all_tests.sh
-  ```
+## 语言目录与状态
 
-## 约定
-- 涉及 Python 的脚本与文档使用 `python` 命令（不使用 `python3`）。
-- 章节目录统一为 ch01-basics、ch02-control、ch03-functions 等。
+| 语言 | 目录 | 基础语法状态 | CI |
+|---|---|---|---|
+| C | [c](c/README.md) | 🚧 部分主题 | ✅ |
+| C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | — |
+| Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
+| Java | [java](java/README.md) | ❌ 待建 | — |
+| Python | [python](python/README.md) | ❌ 基础待建（专题已有） | — |
+| Rust | [rust](rust/README.md) | ❌ 待建 | — |
+| JavaScript | javascript/ | ❌ 待建 | — |
+| TypeScript | typescript/ | ❌ 待建 | — |
+| Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
+| SQL | sql/ | ❌ 待建 | — |
+
+## 主题覆盖矩阵
+
+图例：✅ 已覆盖　➖ 不适用　— 待补（清单定义见 [TOPICS.md](TOPICS.md)）
+
+| 语言 | 01 hello | 02 variable | 03 operator | 04 string | 05 control | 06 function | 07 collection | 08 map | 09 oop | 10 error | 11 file_io | 12 module | 13 stdlib | 14 concurrency | 15 generic | 特色 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| C | ✅ | — | — | ✅ | — | — | ✅ | — | — | — | — | — | ✅ | — | ➖ | — |
+| C++ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Go | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ |
+| Java | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Rust | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| JavaScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| TypeScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |
+| SQL | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+
+> 矩阵为手动维护：完成一个主题就更新对应单元格；SQL 行在落地时替换为其范式清单。
+
+## 其他语言与工具示例
+
+- [assembly](assembly/README.md) - 汇编语言示例
+- swift/ - Swift 示例项目（本地项目，未纳入版本管理）
+- [lua](lua/learnlua.lua) - Lua 示例
+- [scripts/sed](scripts/sed/README.md) - sed 示例
+- [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
+- [c/preprocessor](c/preprocessor/README.md) - C 宏示例
+- [cpp/protobuf](cpp/protobuf/README.md) - Protobuf 示例
+- languages/ - 早期多语言章节式练习与测试（旧结构，待后续计划迁移合并）
+
+## 文档与图示
+
+- [docs/markdown](docs/markdown) - Markdown 示例
+- [docs/drawio](docs/drawio) - Drawio 绘图
+- [docs/plantuml](docs/plantuml) - PlantUML 图示
+- [docs/mermaid](docs/mermaid) - Mermaid 图示
+- [docs/gdb](docs/gdb) - GDB 学习与笔记
+- [docs/intel](docs/intel) - Intel 架构相关资料
+
+## Web
+
+- [web/frontend](web/frontend) - 前端示例与练习（Vue3 工程）

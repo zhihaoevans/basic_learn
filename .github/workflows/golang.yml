@@ -1,0 +1,31 @@
+name: golang
+
+on:
+  push:
+    paths:
+      - 'golang/**'
+      - '.github/workflows/golang.yml'
+  pull_request:
+    paths:
+      - 'golang/**'
+      - '.github/workflows/golang.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Go version
+        run: go version
+
+      - name: Vet and run every example
+        run: |
+          cd golang
+          for f in *.go; do
+            echo "== $f =="
+            go vet "$f"
+            go run "$f"
+          done
