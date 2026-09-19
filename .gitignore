@@ -17,6 +17,9 @@ python/.ipynb_checkpoints/
 java/out/
 *.class
 **/target/
+# Python 编译缓存
+**/__pycache__/
+*.pyc
 # IDE
 **/.idea/
 *.iml
