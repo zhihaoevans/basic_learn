@@ -11,15 +11,15 @@
 | 语言 | 目录 | 基础语法状态 | CI |
 |---|---|---|---|
 | C | [c](c/README.md) | 🚧 部分主题 | ✅ |
-| C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | — |
+| C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | ✅ |
 | Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
-| Java | [java](java/README.md) | ❌ 待建 | — |
-| Python | [python](python/README.md) | ❌ 基础待建（专题已有） | — |
-| Rust | [rust](rust/README.md) | ❌ 待建 | — |
-| JavaScript | javascript/ | ❌ 待建 | — |
-| TypeScript | typescript/ | ❌ 待建 | — |
+| Java | [java](java/README.md) | ❌ 待建 | ✅ |
+| Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
+| Rust | [rust](rust/README.md) | ❌ 待建 | ✅ |
+| JavaScript | javascript/ | ❌ 待建 | ✅ |
+| TypeScript | typescript/ | ❌ 待建 | ✅ |
 | Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
-| SQL | sql/ | ❌ 待建 | — |
+| SQL | sql/ | ❌ 待建 | ✅ |
 
 ## 主题覆盖矩阵
 
