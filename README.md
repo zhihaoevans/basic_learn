@@ -43,12 +43,13 @@
 ## 其他语言与工具示例
 
 - [assembly](assembly/README.md) - 汇编语言示例
-- [swift](swift) - Swift 示例项目
+- swift/ - Swift 示例项目（本地项目，未纳入版本管理）
 - [lua](lua/learnlua.lua) - Lua 示例
 - [scripts/sed](scripts/sed/README.md) - sed 示例
 - [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
 - [c/preprocessor](c/preprocessor/README.md) - C 宏示例
 - [cpp/protobuf](cpp/protobuf/README.md) - Protobuf 示例
+- languages/ - 早期多语言章节式练习与测试（旧结构，待后续计划迁移合并）
 
 ## 文档与图示
 
