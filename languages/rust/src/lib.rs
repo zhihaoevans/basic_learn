@@ -12,3 +12,4 @@ pub fn is_even(n: i32) -> bool {
 
 pub fn sum_to_n(n: u32) -> u32 {
     (1..=n).sum()
+}

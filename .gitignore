@@ -6,6 +6,7 @@
 *.symvers
 *.order
 *.mod
+!go.mod
 .vscode/*
 *.log
 **/.DS_Store
@@ -15,7 +16,7 @@ python/scrapy/.scrapy/
 python/.ipynb_checkpoints/
 java/out/
 *.class
-rust/**/target/
+**/target/
 # IDE
 **/.idea/
 *.iml
