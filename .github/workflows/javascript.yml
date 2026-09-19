@@ -1,0 +1,38 @@
+name: javascript
+
+on:
+  push:
+    paths:
+      - 'javascript/**'
+      - 'languages/javascript/**'
+      - 'web/frontend/**'
+      - '.github/workflows/javascript.yml'
+  pull_request:
+    paths:
+      - 'javascript/**'
+      - 'languages/javascript/**'
+      - 'web/frontend/**'
+      - '.github/workflows/javascript.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run languages/javascript tests
+        run: node --test languages/javascript/tests
+
+      # javascript/ 基础语法目录（平铺单文件）待 Phase 2 落地后在此纳入
+      - name: Build web/frontend/vue3
+        run: |
+          cd web/frontend/vue3
+          npm ci --no-audit --no-fund
+          npm run build
