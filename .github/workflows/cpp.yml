@@ -1,0 +1,49 @@
+name: cpp
+
+on:
+  push:
+    paths:
+      - 'cpp/**'
+      - '.github/workflows/cpp.yml'
+  pull_request:
+    paths:
+      - 'cpp/**'
+      - '.github/workflows/cpp.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # cpp/ 无统一构建入口：container/design_mode/libs/frameworks 等依赖外部库，
+      # 此处只构建四个自含项目；其余目录待 Phase 3 对齐后纳入
+      - name: Build and run cpptest examples
+        run: |
+          cmake -S cpp/cpptest -B cpp/cpptest/build
+          cmake --build cpp/cpptest/build -j"$(nproc)"
+          for b in cpp/cpptest/build/*; do
+            [ -f "$b" ] && [ -x "$b" ] || continue
+            echo "== $b =="
+            "$b"
+          done
+
+      - name: Build and run gtest example
+        run: |
+          cmake -S cpp/google_suites/gtest_example -B cpp/google_suites/gtest_example/build
+          cmake --build cpp/google_suites/gtest_example/build -j"$(nproc)"
+          cpp/google_suites/gtest_example/build/calculator_tests
+
+      - name: Build and run benchmark example
+        run: |
+          cmake -S cpp/google_suites/benchmark_example -B cpp/google_suites/benchmark_example/build
+          cmake --build cpp/google_suites/benchmark_example/build -j"$(nproc)"
+          cpp/google_suites/benchmark_example/build/bench_suite
+
+      - name: Build and run glog example
+        run: |
+          cmake -S cpp/google_suites/glog_example -B cpp/google_suites/glog_example/build
+          cmake --build cpp/google_suites/glog_example/build -j"$(nproc)"
+          cpp/google_suites/glog_example/build/logging_example
