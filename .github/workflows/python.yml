@@ -1,0 +1,31 @@
+name: python
+
+on:
+  push:
+    paths:
+      - 'python/**'
+      - 'languages/python/**'
+      - '.github/workflows/python.yml'
+  pull_request:
+    paths:
+      - 'python/**'
+      - 'languages/python/**'
+      - '.github/workflows/python.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # python/ 下的 ai、matplotlib、scapy、scrapy 专题依赖第三方库，
+      # 暂不入基础 CI；基础语法示例（纯标准库）待 Phase 3 补齐后纳入
+      - name: Run languages/python tests
+        run: python3 -m unittest discover -s languages/python/tests -v
