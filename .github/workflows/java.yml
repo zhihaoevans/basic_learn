@@ -1,0 +1,33 @@
+name: java
+
+on:
+  push:
+    paths:
+      - 'java/**'
+      - '.github/workflows/java.yml'
+  pull_request:
+    paths:
+      - 'java/**'
+      - '.github/workflows/java.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # JDK 11+ 单文件源码直运行，无需 javac/构建工具
+      - name: Run every example
+        run: |
+          find java -name '*.java' | sort | while read -r f; do
+            echo "== $f =="
+            java "$f"
+          done
