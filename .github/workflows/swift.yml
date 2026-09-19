@@ -13,7 +13,8 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    # AppKit/SwiftUI 仅 Apple 平台可用，须用 macOS 运行器
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
