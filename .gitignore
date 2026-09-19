@@ -28,3 +28,12 @@ java/out/
 *.app/
 # C 临时目录
 c/tmp/
+# sanitizers 本地编译产物
+*.dSYM/
+c/sanitizers/asan_oob
+c/sanitizers/asan_uaf
+c/sanitizers/lsan_leak
+c/sanitizers/tsan_race
+c/sanitizers/ubsan_overflow
+# AI 工具本地设置
+**/.claude/settings.local.json
