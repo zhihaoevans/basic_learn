@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
 	*(c + 1) = '0' + (atoi(c + 1) ^ 1);
 
-	printf("%s\n", NULL);
+	printf("%s\n", temp_str);
 
 	return 0;
 }

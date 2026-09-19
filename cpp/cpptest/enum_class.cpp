@@ -1,5 +1,6 @@
 #include <iostream>
 #include <type_traits>
+#include <cstdint>
 
 // Traditional enum (unscoped)
 enum Color {

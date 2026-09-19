@@ -268,8 +268,8 @@ void demo_portability(void) {
 void demo_practical_example(void) {
     printf("=== 实际应用示例：简单哈希表 ===\n");
     
-    // 使用固定宽度类型定义哈希表
-    const size_t TABLE_SIZE = 16;
+    // 使用固定宽度类型定义哈希表（枚举常量保证是编译期长度，数组才能整体初始化）
+    enum { TABLE_SIZE = 16 };
     typedef struct {
         uint32_t key;
         int32_t value;
