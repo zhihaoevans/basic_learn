@@ -1,0 +1,38 @@
+name: rust
+
+on:
+  push:
+    paths:
+      - 'rust/**'
+      - 'languages/rust/**'
+      - '.github/workflows/rust.yml'
+  pull_request:
+    paths:
+      - 'rust/**'
+      - 'languages/rust/**'
+      - '.github/workflows/rust.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # runner 预装 rustup，确保 stable 工具链就绪
+      - name: Set up Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+
+      - name: Test languages/rust
+        run: cargo test -q --manifest-path languages/rust/Cargo.toml
+
+      - name: Run rust/hello_world
+        run: cargo run -q --manifest-path rust/hello_world/Cargo.toml
+
+      - name: Run rust/main.rs
+        run: |
+          rustc rust/main.rs -o /tmp/rust_main
+          /tmp/rust_main
