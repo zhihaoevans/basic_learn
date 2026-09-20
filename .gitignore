@@ -37,3 +37,6 @@ c/sanitizers/tsan_race
 c/sanitizers/ubsan_overflow
 # AI 工具本地设置
 **/.claude/settings.local.json
+
+# SQL 示例运行产物（样例库，seed.sql 可随时重建）
+sql/db.sqlite
