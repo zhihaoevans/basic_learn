@@ -12,6 +12,7 @@
 #include <array>
 #include <cstddef>  // std::size_t
 #include <iostream>
+#include <utility>
 #include <string>
 #include <type_traits>  // std::is_same
 #include <vector>

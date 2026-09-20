@@ -1,4 +1,4 @@
-// 主题说明：C++ 异常处理 —— throw 抛出、try-catch 按const 引用捕获、
+// 主题说明：C++ 异常处理 —— throw 抛出、try-catch 按 const 引用捕获、
 //           catch 子句从派生到基类的匹配顺序、自定义异常类（继承 std::runtime_error）、
 //           标准异常层次（logic_error / runtime_error）、noexcept 承诺。
 // 运行命令：./cpp/basics/build/10_error

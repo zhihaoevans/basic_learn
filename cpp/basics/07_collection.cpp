@@ -11,7 +11,7 @@
 
 #include <array>
 #include <iostream>
-#include <iterator>  // std::rbegin/rbegin
+#include <iterator>  // std::rbegin/rend
 #include <list>
 #include <set>
 #include <vector>
