@@ -17,7 +17,7 @@
 | Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
 | Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
 | JavaScript | [javascript](javascript/README.md) | ✅ 完整 | ✅ |
-| TypeScript | typescript/ | ❌ 待建 | ✅ |
+| TypeScript | [typescript](typescript/README.md) | ✅ 完整 | ✅ |
 | Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
 | SQL | sql/ | ❌ 待建 | ✅ |
 
@@ -34,7 +34,7 @@
 | Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 | Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | JavaScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
-| TypeScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| TypeScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |
 | SQL | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 

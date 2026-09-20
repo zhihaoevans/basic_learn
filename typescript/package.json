@@ -1,0 +1,8 @@
+{
+  "name": "typescript-basics",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^4.20.0"
+  }
+}
