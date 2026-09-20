@@ -1,199 +1,55 @@
 # C 语言示例
 
-本目录包含 C 语言基础示例与标准库演示，覆盖数组、字符串、数学、输出与标准库头文件。所有示例均使用最新的 C17/C18 标准编写。
+C 是静态类型的编译型系统语言，以贴近硬件、零运行时开销和可移植著称。本目录按 [TOPICS.md](../TOPICS.md) 的统一主题清单组织基础语法示例：一个主题一个自包含可运行文件，每个文件头注释含主题说明、运行命令与预期输出。
 
-## 📁 目录结构
+- 权威参考：[cppreference C（含 C17 标准）](https://en.cppreference.com/w/c)
+- 语言标准与提案：[WG14 / ISO C 委员会](https://www.open-std.org/jtc1/sc22/wg14/)
 
-```
-c/
-├── array/     # 数组示例 (4个完整示例 + README)
-│   ├── array_basics.c           # 数组基础：声明、初始化、访问
-│   ├── array_operations.c       # 数组操作：排序、搜索、变换
-│   ├── multidim_array.c         # 多维数组：矩阵运算
-│   ├── array_pointer.c          # 数组与指针关系
-│   └── README.md                # 数组章节说明
-├── print/     # 输出与格式化示例 (3个完整示例 + README)
-│   ├── print_basics.c           # 基础输出函数
-│   ├── format_specifiers.c      # 格式说明符完整示例
-│   ├── advanced_formatting.c    # 高级格式化技巧
-│   └── README.md                # 输出章节说明
-├── string/    # 字符串相关示例 (3个完整示例 + README)
-│   ├── string_basics.c          # 字符串基础
-│   ├── string_operations.c      # 字符串操作函数
-│   ├── string_manipulation.c    # 字符串处理技巧
-│   └── README.md                # 字符串章节说明
-├── math/      # 数学相关示例 (2个完整示例 + README)
-│   ├── math_basics.c            # 基础数学运算
-│   ├── advanced_math.c          # 高级数学函数
-│   └── README.md                # 数学章节说明
-├── std/       # C 标准库演示（含完整 README）
-│   ├── stdio_demo.c             # stdio.h 演示
-│   ├── stdlib_demo.c            # stdlib.h 演示
-│   ├── string_demo.c            # string.h 演示
-│   ├── math_demo.c              # math.h 演示
-│   ├── time_demo.c              # time.h 演示
-│   ├── ctype_demo.c             # ctype.h 演示
-│   ├── assert_demo.c            # assert.h 演示
-│   ├── limits_demo.c            # limits.h 演示
-│   ├── stddef_demo.c            # stddef.h 演示
-│   ├── stdint_demo.c            # stdint.h 演示
-│   ├── stdbool_demo.c           # stdbool.h 演示
-│   ├── errno_demo.c             # errno.h 演示
-│   ├── signal_demo.c            # signal.h 演示
-│   ├── setjmp_demo.c            # setjmp.h 演示
-│   ├── stdarg_demo.c            # stdarg.h 演示
-│   ├── locale_demo.c            # locale.h 演示
-│   └── README.md                # 标准库章节说明
-└── tmp/       # 临时/实验代码
-```
+## 环境要求
 
-## 🎯 学习路径建议
+- **C17** 标准（gcc 7+ 或 clang 6+，CMake 配置里已固定 `CMAKE_C_STANDARD 17`）
+- **CMake ≥ 3.16**
+- **pthread**（POSIX 线程，Linux/macOS 系统自带；`concurrency/` 示例由 CMake 自动链接）
 
-### 初学者路径
-1. **array/** - 数组基础，理解数据结构
-2. **print/** - 输出函数，学习调试技巧
-3. **string/** - 字符串操作，掌握文本处理
-4. **math/** - 数学运算，理解数值计算
+## 如何运行
 
-### 进阶路径
-5. **std/** - 深入学习C标准库的16个核心头文件
-
-## 🚀 运行方式
-
-### 方式1：使用 Makefile（推荐）
+统一用 CMake 构建产物名按「目录_文件」前缀规则生成（如 `variable/variable_basics.c` → `variable_variable_basics`），全部输出到 `c/build/bin/`：
 
 ```bash
-# 在 c/ 目录下构建所有示例并把可执行文件放到 bin/
-make all
-
-# 清理编译产物
-make clean
-
-# 运行示例（以数组基础为例）
-./bin/array_array_basics
-
-# 运行其他示例
-./bin/print_format_specifiers
-./bin/string_operations
-./bin/math_advanced_math
+# 在仓库根目录执行
+cmake -S c -B c/build         # 配置
+cmake --build c/build -j8     # 构建（零错误零警告）
+./c/build/bin/variable_variable_basics   # 运行任意示例
+for b in c/build/bin/*; do "$b" >/dev/null 2>&1 || echo "FAIL: $b"; done  # CI 同款全量门禁
 ```
 
-### 方式2：手动编译单个文件
+> 旧版 README 推荐 `make all`（Makefile）：Makefile 已不再是本目录的主要构建方式，请统一使用上述 CMake 流程（与 CI 的 c.yml 门禁一致）。
 
-```bash
-# 编译数组示例
-cc -std=c17 -Wall -Wextra array/array_basics.c -o array_basics
-./array_basics
+## 主题索引
 
-# 编译字符串示例
-cc -std=c17 -Wall -Wextra string/string_operations.c -o string_operations
-./string_operations
+| 主题 | 示例文件 | 运行命令 | 一句话说明 |
+|---|---|---|---|
+| 01 hello | [print/print_basics.c](print/print_basics.c) | `./c/build/bin/print_print_basics` | printf/puts/putchar 基础输出 |
+| 02 variable | [variable/variable_basics.c](variable/variable_basics.c) | `./c/build/bin/variable_variable_basics` | 基本类型、sizeof、const vs #define、类型转换与整型溢出 |
+| 03 operator | [operator/operator_basics.c](operator/operator_basics.c) | `./c/build/bin/operator_operator_basics` | 算术/位运算/自增自减/三目/短路/优先级陷阱 |
+| 04 string | [string/string_basics.c](string/string_basics.c) | `./c/build/bin/string_string_basics` | 字符串声明与 string.h 常用函数 |
+| 05 control | [control/control_flow.c](control/control_flow.c) | `./c/build/bin/control_control_flow` | if/switch（fallthrough）/三种循环/break-continue/goto |
+| 06 function | [function/function_basics.c](function/function_basics.c) | `./c/build/bin/function_function_basics` | 原型/定义/static/递归/函数指针入门 |
+| 07 collection | [array/array_basics.c](array/array_basics.c) | `./c/build/bin/array_array_basics` | 数组声明、初始化、遍历与传参 |
+| 08 map | — | — | ➖ C 标准库无映射/字典类型（只能数组+查找函数或第三方库模拟） |
+| 09 oop | [oop/struct_polymorphism.c](oop/struct_polymorphism.c) | `./c/build/bin/oop_struct_polymorphism` | struct 封装+函数指针字段模拟方法与多态 |
+| 10 error | [error/error_handling.c](error/error_handling.c) | `./c/build/bin/error_error_handling` | 返回码约定/errno/perror/strerror/EXIT_FAILURE |
+| 11 file_io | [file_io/file_io.c](file_io/file_io.c) | `./c/build/bin/file_io_file_io` | fopen 模式/文本与二进制读写/错误检查 |
+| 12 module | [module/module_demo.c](module/module_demo.c)（+ util.h/util.c） | `./c/build/bin/module_module_demo` | 头文件声明+实现文件定义、extern/static 可见性、include guard |
+| 13 stdlib | [std/](std/README.md)（16 个头文件逐一演示） | 如 `./c/build/bin/std_stdio_demo` | C 标准库头文件速览 |
+| 14 concurrency | [concurrency/pthread_basics.c](concurrency/pthread_basics.c) | `./c/build/bin/concurrency_pthread_basics` | pthread_create/join、mutex 互斥计数 |
+| 15 generic | — | — | ➖ C 无语言级泛型（宏可粗略模拟，见 preprocessor/） |
 
-# 编译数学示例（需要链接数学库 -lm）
-cc -std=c17 -Wall -Wextra math/math_basics.c -o math_basics -lm
-./math_basics
-```
+各主题目录还有更多进展示例（array/ 的排序搜索多维、print/ 的格式化技巧、string/ 的处理技巧、math/ 的数学函数等），详见各目录 README。
 
-## 📚 内容概览
+## 进阶专题
 
-### array/ - 数组示例 ⭐⭐⭐⭐⭐
-
-完整覆盖数组的各个方面：
-- **基础**: 声明、初始化、访问、修改、遍历
-- **操作**: 排序（冒泡、选择、插入、qsort）、搜索（线性、二分）
-- **多维**: 二维数组、矩阵运算、三维数组
-- **高级**: 数组与指针、动态数组、指针数组与数组指针
-
-**示例数量**: 4个完整示例 + README  
-**代码行数**: ~1,330行  
-**难度**: ⭐⭐ ~ ⭐⭐⭐⭐
-
-### print/ - 输出格式化示例 ⭐⭐⭐⭐⭐
-
-涵盖所有输出相关内容：
-- **基础**: printf, puts, putchar, fprintf, sprintf, snprintf
-- **格式**: 所有格式说明符（%d, %f, %s, %p等）
-- **高级**: ANSI颜色、表格输出、进度条、数据可视化
-
-**示例数量**: 3个完整示例 + README  
-**代码行数**: ~1,214行  
-**难度**: ⭐⭐ ~ ⭐⭐⭐
-
-### string/ - 字符串示例 ⭐⭐⭐⭐⭐
-
-全面的字符串处理：
-- **基础**: 字符串概念、声明、初始化、访问
-- **操作**: string.h中所有常用函数（strcpy, strcat, strcmp等）
-- **技巧**: 安全操作、大小写转换、修剪、替换、反转、回文检查
-
-**示例数量**: 3个完整示例 + README  
-**代码行数**: ~1,317行  
-**难度**: ⭐⭐ ~ ⭐⭐⭐⭐
-
-### math/ - 数学示例 ⭐⭐⭐⭐⭐
-
-完整的数学计算：
-- **基础**: 算术运算、取整、随机数、数学常量
-- **高级**: 三角函数、指数对数、幂函数、特殊函数（伽马、误差函数）
-
-**示例数量**: 2个完整示例 + README  
-**代码行数**: ~1,036行  
-**难度**: ⭐⭐ ~ ⭐⭐⭐⭐
-
-### std/ - 标准库示例 ⭐⭐⭐⭐⭐
-
-16个标准库头文件的完整演示，详见 [std/README.md](std/README.md)
-
-## 📊 统计信息
-
-| 目录 | 示例数 | 代码行数 | README |
-|------|--------|----------|---------|
-| array/ | 4 | ~1,330 | ✓ |
-| print/ | 3 | ~1,214 | ✓ |
-| string/ | 3 | ~1,317 | ✓ |
-| math/ | 2 | ~1,036 | ✓ |
-| std/ | 16 | ~5,000+ | ✓ |
-| **总计** | **28+** | **~9,900+** | **5个** |
-
-## 💡 特色亮点
-
-1. **完整性**: 覆盖C语言基础的所有核心主题
-2. **实用性**: 每个示例都包含实际应用场景
-3. **标准性**: 严格遵循C17/C18标准
-4. **注释详细**: 每个示例都有中文注释说明
-5. **可运行**: 所有代码都经过测试，可直接运行
-6. **文档完善**: 每个目录都有完整的README说明
-
-## ⚠️ 注意事项
-
-1. **编译标准**: 建议使用 `-std=c17` 或 `-std=c11`
-2. **数学库**: math/ 目录下的示例需要链接 `-lm`
-3. **警告选项**: 推荐使用 `-Wall -Wextra` 捕获潜在问题
-4. **平台差异**: 某些示例在不同平台可能有细微差异
-
-## 🔧 编译器要求
-
-- **GCC**: 7.0+ (推荐)
-- **Clang**: 6.0+ (推荐)
-- **MSVC**: Visual Studio 2019+ (支持C11/C17)
-
-## 📖 参考资源
-
-- C17/C18 标准文档
-- 《C Primer Plus》第6版
-- 《C程序设计语言》（K&R）第2版
-- GNU C Library 文档
-
-## 🤝 贡献指南
-
-欢迎提交问题报告和改进建议！请确保：
-- 代码符合C17/C18标准
-- 包含详细的中文注释
-- 通过编译且无警告
-- 示例具有实际意义
-
----
-
-**创建日期**: 2024年  
-**标准**: C17/C18  
-**用途**: C语言基础学习和参考
+- [gcc/](gcc/) —— 编译器特性专题（如 attribute 用法）
+- [preprocessor/](preprocessor/README.md) —— 宏与预处理：#define、宏函数、条件编译、预定义宏
+- [sanitizers/](sanitizers/README.md) —— ASan/LSan/UBSan/TSan 内存错误与未定义行为检测
+- [../linux/](../linux/) —— 更进一步的 Linux 系统编程（系统调用、进程线程、IPC、网络等）
