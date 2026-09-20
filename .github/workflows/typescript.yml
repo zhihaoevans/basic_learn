@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '20'
 
-      # typescript/ 目录待 Phase 2 落地；落地前空转通过
+      # typescript/ 目录已随 Phase 2 落地（src/ 每主题一个 .ts）；compgen 兜底空转分支保留
       - name: Run every example
         run: |
           if compgen -G "typescript/src/*.ts" > /dev/null; then

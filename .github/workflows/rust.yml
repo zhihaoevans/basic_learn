@@ -29,6 +29,14 @@ jobs:
       - name: Test languages/rust
         run: cargo test -q --manifest-path languages/rust/Cargo.toml
 
+      - name: Run rust/examples basics
+        run: |
+          for ex in rust/examples/*.rs; do
+            name=$(basename "$ex" .rs)
+            echo "== $name =="
+            cargo run -q --manifest-path rust/Cargo.toml --example "$name"
+          done
+
       - name: Run rust/hello_world
         run: cargo run -q --manifest-path rust/hello_world/Cargo.toml
 
