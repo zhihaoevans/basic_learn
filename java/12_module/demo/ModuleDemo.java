@@ -13,7 +13,8 @@
  *      本文件声明 package demo，所以放在 demo/ 子目录，运行命令是
  *      java java/12_module/demo/ModuleDemo.java；
  *   2) 单文件模式只编译入口文件，但引用到的同目录（同包）类（如 Util）
- *      会被自动按需编译，无需手动 javac；
+ *      会被自动按需编译，无需手动 javac —— 该隐式编译需 JDK 22+（JDK 21
+ *      及以下报 cannot find symbol，此时用传统方式，见下）；
  *   3) 传统方式则是先 javac -d out 编译再 java -cp out demo.ModuleDemo。
  */
 

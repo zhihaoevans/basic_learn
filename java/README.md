@@ -7,9 +7,10 @@ Java 是一门静态类型、面向对象的跨平台语言，"一次编写、�
 ## 环境要求
 
 - **JDK 11+**：所有示例使用 JDK 11 引入的"单文件源码直运行"（`java Xxx.java`），无需先 `javac` 编译
+- **JDK 22+**：`12_module` 依赖 JDK 22 起单文件模式的同目录隐式编译（21 及以下会报 cannot find symbol）；低版本可用传统方式：`cd java/12_module && javac demo/*.java && java -cp demo demo.ModuleDemo`
 - **JDK 21**：`16_records/RecordsDemo.java` 用到 JDK 21 正式特性（record 解构、switch 模式匹配），必须 21+
 - 个别示例还使用了 JDK 14–17 的语法：04 的文本块（15+）、05 的箭头 switch（14+）、09 的 instanceof 模式匹配（16+），旧 JDK 跑不了这几题
-- 推荐直接安装 JDK 21（与 CI 一致），如 [Temurin](https://adoptium.net/)；`java --version` 可查看当前版本
+- 推荐直接安装 JDK 25 LTS（与 CI 一致），如 [Temurin](https://adoptium.net/)；`java --version` 可查看当前版本
 
 ## 如何运行
 

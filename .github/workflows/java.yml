@@ -22,7 +22,8 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          # 12_module 依赖 JDK 22 起单文件模式的同目录隐式编译（21 及以下报 cannot find symbol），取 LTS 25
+          java-version: '25'
 
       # JDK 11+ 单文件源码直运行，无需 javac/构建工具
       - name: Run every example
