@@ -15,7 +15,7 @@
 | Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
 | Java | [java](java/README.md) | ✅ 完整 | ✅ |
 | Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
-| Rust | [rust](rust/README.md) | ❌ 待建 | ✅ |
+| Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
 | JavaScript | javascript/ | ❌ 待建 | ✅ |
 | TypeScript | typescript/ | ❌ 待建 | ✅ |
 | Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
@@ -32,7 +32,7 @@
 | Go | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ |
 | Java | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
-| Rust | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | JavaScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 | TypeScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 | Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |

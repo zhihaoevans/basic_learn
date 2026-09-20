@@ -1,0 +1,9 @@
+# 基础语法教学示例包：仅用 examples/ 组织 16 个独立可运行示例，无 lib、无 bin。
+# 运行方式（在 rust/ 目录下）：
+#   cargo run --example 01_hello        # 单个示例
+#   cargo build --examples              # 全部构建（CI 同款门槛）
+[package]
+name = "rust_basics"
+version = "0.1.0"
+edition = "2021"
+publish = false
