@@ -20,7 +20,7 @@ console.log(`1 + 1 = ${1 + 1}`);
 
 // 知识点 3：TS 的第一课 —— 类型标注。answer: number 表示这个变量只能存放数字
 const answer: number = 42;
-// answer = '42'; // 编译错误：不能把 string 赋给 number（tsx 只转译不报错，npx tsc --noEmit 会报）
+// answer = '42'; // 编译错误：不能把 string 赋给 number（tsx 只转译不报错，npx --package typescript tsc --noEmit 会报）
 console.log('answer 的类型是 number，值是', answer);
 
 // 知识点 4：类型推断 —— 不写标注，TS 也能从初值推出类型，之后存放别的类型同样报编译错误

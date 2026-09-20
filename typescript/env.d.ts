@@ -1,9 +1,9 @@
 // 主题说明：tsc 的"环境声明"文件 —— 本工程刻意只装 tsx 一个 devDependency（运行器），
 //           不引入 @types/node，因此这里手写示例会用到的极小一部分 Node API 类型。
-//           tsx 运行不受影响（esbuild 只剥离类型不查类型）；`npx tsc --noEmit` 依赖本文件通过检查。
+//           tsx 运行不受影响（esbuild 只剥离类型不查类型）；`npx --package typescript tsc --noEmit` 依赖本文件通过检查（裸 npx tsc 会命中 npm 假包 tsc）。
 //           若日后想改用官方类型包：npm i -D @types/node 后删除本文件即可（tsconfig 的 "types": []
 //           已阻止 @types 自动生效，届时需将其改为 "types": ["node"]）。
-// 运行命令：npx tsc --noEmit（本文件只参与类型检查，没有运行产物）
+// 运行命令：npx --package typescript tsc --noEmit（本文件只参与类型检查，没有运行产物）
 
 // —— Node 注入的全局对象（TC39 标准 lib 里没有）——
 declare var console: {
