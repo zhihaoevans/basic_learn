@@ -11,7 +11,7 @@
 | 语言 | 目录 | 基础语法状态 | CI |
 |---|---|---|---|
 | C | [c](c/README.md) | ✅ 完整 | ✅ |
-| C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | ✅ |
+| C++ | [cpp](cpp/README.md) | ✅ 完整 | ✅ |
 | Go | [golang](golang/README.md) | ✅ 完整 | ✅ |
 | Java | [java](java/README.md) | ✅ 完整 | ✅ |
 | Python | [python](python/README.md) | ✅ 完整 | ✅ |
@@ -28,7 +28,7 @@
 | 语言 | 01 hello | 02 variable | 03 operator | 04 string | 05 control | 06 function | 07 collection | 08 map | 09 oop | 10 error | 11 file_io | 12 module | 13 stdlib | 14 concurrency | 15 generic | 特色 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | C | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | — |
-| C++ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| C++ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Go | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Java | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Python | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
