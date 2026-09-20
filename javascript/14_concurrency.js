@@ -5,7 +5,7 @@
 //   Promise 链结果：20
 //   async/await -> 用户7
 //   串行 3 个任务约 150ms；并行 Promise.all 约 50ms —— 并行快 3 倍左右
-//   allSettled: [ 'fulfilled: ok', "rejected: boom", 'fulfilled: slow ok' ]
+//   allSettled: [ 'fulfilled: ok', 'rejected: boom', 'fulfilled: slow ok' ]
 
 // 知识点 0：工具函数 —— setTimeout 包成 Promise，模拟耗时 IO
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

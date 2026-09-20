@@ -50,13 +50,13 @@ for (const key in point) {
   console.log(`for-in: ${key} = ${point[key]}`);
 }
 
-// 知识点 6：while 与 break/continue（continue 跳过本次循环体剩余部分）
+// 知识点 6：while 与 break/continue —— while(true) + break 主动跳出是常见组合；continue 跳过本次循环体剩余部分
 let i = 0;
-while (i < 6) {
+while (true) {
   i++;
-  if (i % 2 === 0) continue; // 跳过偶数
-  if (i > 5) break;          // i 为 5 时打印后 i 变 6，下一轮直接结束
-  console.log('while 奇数 ->', i);
+  if (i > 5) break;          // i 到 6 时 break 主动结束循环（否则 while(true) 会一直转下去）
+  if (i % 2 === 0) continue; // 跳过偶数，直接进入下一轮
+  console.log('while 奇数 ->', i); // 只打印 1、3、5
 }
 
 // 知识点 7：标签（label）—— 给外层循环起名，break outer 可一次跳出多重循环
