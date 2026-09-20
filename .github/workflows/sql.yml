@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # sql/ 目录待 Phase 2 落地（seed.sql 建样例库 + 每主题一个 .sql）；落地前空转通过
+      # sql/ 目录已随 Phase 2 落地（seed.sql 建样例库 + 每主题一个 .sql）；compgen 兜底空转分支保留
       - name: Run every example
         run: |
           if compgen -G "sql/*.sql" > /dev/null; then
@@ -31,5 +31,5 @@ jobs:
               sqlite3 sql/db.sqlite < "$f"
             done
           else
-            echo "暂无 SQL 示例，空转通过（Phase 2 落地后自动生效）"
+            echo "暂无 SQL 示例（示例文件被删除时），空转通过"
           fi

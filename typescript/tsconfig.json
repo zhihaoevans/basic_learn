@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // 目标与模块：ES2022 支持顶层 await；NodeNext 与 package.json 的 "type": "module"
+    // 配套，相对导入必须写全 ./ 与 .js 扩展名（tsc 会把 .js 解析到同名的 .ts 源文件）
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    // 严格模式全家桶（noImplicitAny / strictNullChecks / useUnknownInCatchVariables 等）
+    "strict": true,
+    // 只做类型检查，产物由 tsx 在内存中转译执行，不落盘
+    "noEmit": true,
+    // 不自动引入任何 @types/* 包：本工程的 Node 环境类型由 env.d.ts 手写（见该文件头注释）
+    "types": [],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src", "env.d.ts"]
+}

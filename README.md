@@ -13,13 +13,13 @@
 | C | [c](c/README.md) | 🚧 部分主题 | ✅ |
 | C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | ✅ |
 | Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
-| Java | [java](java/README.md) | ❌ 待建 | ✅ |
+| Java | [java](java/README.md) | ✅ 完整 | ✅ |
 | Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
-| Rust | [rust](rust/README.md) | ❌ 待建 | ✅ |
-| JavaScript | javascript/ | ❌ 待建 | ✅ |
-| TypeScript | typescript/ | ❌ 待建 | ✅ |
+| Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
+| JavaScript | [javascript](javascript/README.md) | ✅ 完整 | ✅ |
+| TypeScript | [typescript](typescript/README.md) | ✅ 完整 | ✅ |
 | Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
-| SQL | sql/ | ❌ 待建 | ✅ |
+| SQL | [sql](sql/README.md) | ✅ 完整 | ✅ |
 
 ## 主题覆盖矩阵
 
@@ -30,15 +30,17 @@
 | C | ✅ | — | — | ✅ | — | — | ✅ | — | — | — | — | — | ✅ | — | ➖ | — |
 | C++ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 | Go | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ |
-| Java | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Java | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
-| Rust | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
-| JavaScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
-| TypeScript | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| JavaScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
+| TypeScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |
-| SQL | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| SQL | ➖ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ |
 
-> 矩阵为手动维护：完成一个主题就更新对应单元格；SQL 行在落地时替换为其范式清单。
+> 矩阵为手动维护：完成一个主题就更新对应单元格。
+>
+> *SQL 行说明：SQL 为声明式范式，不按 15 题清单组织，本行 ✅ 为近似映射 —— 02 建表与类型（seed.sql）、03 运算符与函数（01）、04 字符串函数（01）、05 CASE/流程（02）、07 结果集操作（04 的 UNION/INTERSECT/EXCEPT）、10 约束与错误处理（seed + 06）、13 内置函数速览（01/02/04）、特色为窗口函数/递归 CTE/执行计划（04/07/08）；➖ 为无对应主题。SQL 自身的 8 个范式主题清单见 [sql/README.md](sql/README.md)。*
 
 ## 其他语言与工具示例
 
