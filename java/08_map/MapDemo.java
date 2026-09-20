@@ -10,7 +10,7 @@ import java.util.TreeMap;
  * 预期输出（关键行）：
  *   查: apple -> 苹果
  *   getOrDefault: 没有的键返回默认值 -> 未知
- *   TreeMap 按键排序: {apple=苹果, banana=香蕉, cherry=樱桃}
+ *   TreeMap 按键排序: {apple=1, banana=2, cherry=3}
  */
 public class MapDemo {
 

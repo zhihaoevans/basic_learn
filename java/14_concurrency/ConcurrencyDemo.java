@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 运行命令：java java/14_concurrency/ConcurrencyDemo.java
  * 预期输出（关键行）：
  *   两条线程各自在跑（输出顺序可能交错）
- *   join 后: 两条线程都结束了，共享数据 = 200
+ *   join 后: 两条线程都结束了，加锁线程写入的共享数据 = 50000
  *   未同步计数 = xxxxx（通常 < 100000，丢更新）
  *   synchronized 计数 = 100000（永远正确）
  */

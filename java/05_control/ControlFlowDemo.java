@@ -3,7 +3,7 @@
  *           （for / 增强 for / while / do-while）、break/continue 与带标签的循环。
  * 运行命令：java java/05_control/ControlFlowDemo.java
  * 预期输出（关键行）：
- *   3 是正数
+ *   85 分 -> 及格，良好
  *   传统 switch: 星期三
  *   箭头 switch: 星期三（Wednesday）
  *   找到目标 7，跳出外层循环
