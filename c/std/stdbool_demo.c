@@ -154,7 +154,8 @@ void demo_bool_arrays_and_flags(void) {
     printf("=== 布尔数组和标志位演示 ===\n");
     
     // 布尔数组：埃拉托斯特尼筛法找质数
-    const int MAX_NUM = 30;
+    // （数组长度须是常量表达式：C 的 const 变量不算，这里改用宏）
+#define MAX_NUM 30
     bool is_prime_arr[MAX_NUM + 1];
     
     // 初始化：假设所有数都是质数

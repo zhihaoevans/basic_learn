@@ -25,7 +25,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      # python/ 下的 ai、matplotlib、scapy、scrapy 专题依赖第三方库，
-      # 暂不入基础 CI；基础语法示例（纯标准库）待 Phase 3 补齐后纳入
+      # python/ 下的基础语法示例（NN_*.py）已纳入 CI：纯标准库，逐个运行要求退出码 0；
+      # ai、matplotlib、scapy、scrapy、chapters 专题依赖第三方库，暂不入 CI
       - name: Run languages/python tests
         run: python3 -m unittest discover -s languages/python/tests -v
+
+      - name: Run python basics examples
+        run: |
+          for f in python/[0-9]*.py; do
+            echo "== $f =="
+            python3 "$f"
+          done

@@ -10,15 +10,15 @@
 
 | 语言 | 目录 | 基础语法状态 | CI |
 |---|---|---|---|
-| C | [c](c/README.md) | 🚧 部分主题 | ✅ |
-| C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | ✅ |
-| Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
+| C | [c](c/README.md) | ✅ 完整 | ✅ |
+| C++ | [cpp](cpp/README.md) | ✅ 完整 | ✅ |
+| Go | [golang](golang/README.md) | ✅ 完整 | ✅ |
 | Java | [java](java/README.md) | ✅ 完整 | ✅ |
-| Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
+| Python | [python](python/README.md) | ✅ 完整 | ✅ |
 | Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
 | JavaScript | [javascript](javascript/README.md) | ✅ 完整 | ✅ |
 | TypeScript | [typescript](typescript/README.md) | ✅ 完整 | ✅ |
-| Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
+| Shell | [scripts/shell](scripts/shell/README.md) | ✅ 完整 | ✅ |
 | SQL | [sql](sql/README.md) | ✅ 完整 | ✅ |
 
 ## 主题覆盖矩阵
@@ -27,15 +27,15 @@
 
 | 语言 | 01 hello | 02 variable | 03 operator | 04 string | 05 control | 06 function | 07 collection | 08 map | 09 oop | 10 error | 11 file_io | 12 module | 13 stdlib | 14 concurrency | 15 generic | 特色 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| C | ✅ | — | — | ✅ | — | — | ✅ | — | — | — | — | — | ✅ | — | ➖ | — |
-| C++ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
-| Go | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ |
+| C | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | — |
+| C++ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Go | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Java | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Python | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | JavaScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
 | TypeScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |
+| Shell | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
 | SQL | ➖ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ |
 
 > 矩阵为手动维护：完成一个主题就更新对应单元格。

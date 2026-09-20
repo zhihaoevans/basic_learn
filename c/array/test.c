@@ -27,8 +27,8 @@ int main(int argc, char* argv[])
   {
     pd = (struct pci_device *)malloc(sizeof(struct pci_device));
 	char arr[]="123456789abcde";
-    printf("sizeof arr is %d\n", sizeof(arr));
+    printf("sizeof arr is %zu\n", sizeof(arr));
     printf("sizeof arr is %d\n", sizeof_arr(arr));
-    printf("sizeof arr is %d\n", sizeof((pd->driver)));
+    printf("sizeof arr is %zu\n", sizeof((pd->driver)));
     return 0;
   }

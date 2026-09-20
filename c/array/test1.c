@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     int i = 2;
     printf("it is %d\n", (i == 2));
     printf("it is %d\n", (i = 3));
-    printf("it is %d\n", strlen("hello"));
+    printf("it is %zu\n", strlen("hello"));
 
 
     return 0;

@@ -19,7 +19,17 @@ jobs:
         uses: actions/checkout@v4
 
       # cpp/ 无统一构建入口：container/design_mode/libs/frameworks 等依赖外部库，
-      # 此处只构建四个自含项目；其余目录待 Phase 3 对齐后纳入
+      # 此处构建自含项目（basics 为 Phase 3 基础对齐新增）；其余目录待后续纳入
+      - name: Build and run basics examples
+        run: |
+          cmake -S cpp/basics -B cpp/basics/build
+          cmake --build cpp/basics/build -j"$(nproc)"
+          for b in cpp/basics/build/*; do
+            [ -f "$b" ] && [ -x "$b" ] || continue
+            echo "== $b =="
+            "$b"
+          done
+
       - name: Build and run cpptest examples
         run: |
           cmake -S cpp/cpptest -B cpp/cpptest/build
