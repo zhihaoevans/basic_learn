@@ -3,7 +3,7 @@
 // 运行命令：go run golang/04_string.go
 // 预期输出（关键行）：
 //   [1] 原串: Hello, 世界 → 新串: wello, 世界
-//   len(s) = 13 （字节长度：9 个 ASCII + 2 个汉字 × 3 字节）
+//   len(s) = 13 （字节长度：7 个 ASCII + 2 个汉字 × 3 字节）
 //   utf8.RuneCountInString(s) = 9 （字符个数）
 //   s[7:] = 世界 （从「世」的字节起点切到末尾）
 //   [6] Atoi("42") + 1 = 43
@@ -25,7 +25,7 @@ func main() {
     fmt.Println("[1] 原串:", s, "→ 新串:", t)
 
     // 知识点 2：len 按字节计 —— UTF-8 里一个汉字占 3 字节；数"字符"要用 rune
-    fmt.Println("[2] len(s) =", len(s), "（字节长度：9 个 ASCII + 2 个汉字 × 3 字节）")
+    fmt.Println("[2] len(s) =", len(s), "（字节长度：7 个 ASCII + 2 个汉字 × 3 字节）")
     fmt.Println("    utf8.RuneCountInString(s) =", utf8.RuneCountInString(s), "（字符个数）")
 
     // 知识点 3：下标取到字节，range 遍历到 rune —— 处理中文的关键区别

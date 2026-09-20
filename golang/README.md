@@ -6,7 +6,7 @@ Go（Golang）是 Google 开源的静态强类型编译型语言，以语法精�
 
 ## 环境要求
 
-- **Go 1.20+**（15_generic 需 1.18+ 泛型，已包含在 1.20 内；13_stdlib 的 slices/maps 需 1.21+、其中 maps.Keys 迭代器需 1.23+，建议直接安装最新版）
+- **Go 1.23+**（仅 13_stdlib 的 maps.Keys 需要；其余示例 1.20+ 即可）
 - 安装：从 [go.dev/dl](https://go.dev/dl/) 下载安装，`go version` 确认版本
 - 全部示例仅用标准库，无需任何第三方依赖，也无需 go.mod（逐文件运行）
 
