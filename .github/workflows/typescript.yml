@@ -29,6 +29,7 @@ jobs:
           if compgen -G "typescript/src/*.ts" > /dev/null; then
             cd typescript
             npm ci --no-audit --no-fund
+            npx --package typescript tsc --noEmit
             for f in src/*.ts; do
               echo "== $f =="
               npx tsx "$f"
