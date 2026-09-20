@@ -14,7 +14,7 @@
 | C++ | [cpp](cpp/README.md) | 🚧 进阶丰富，基础待对齐 | ✅ |
 | Go | [golang](golang/README.md) | 🚧 部分主题 | ✅ |
 | Java | [java](java/README.md) | ✅ 完整 | ✅ |
-| Python | [python](python/README.md) | ❌ 基础待建（专题已有） | ✅ |
+| Python | [python](python/README.md) | ✅ 完整 | ✅ |
 | Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
 | JavaScript | [javascript](javascript/README.md) | ✅ 完整 | ✅ |
 | TypeScript | [typescript](typescript/README.md) | ✅ 完整 | ✅ |
@@ -31,7 +31,7 @@
 | C++ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
 | Go | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ |
 | Java | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Python | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| Python | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | JavaScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
 | TypeScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
