@@ -18,7 +18,7 @@
 | Rust | [rust](rust/README.md) | ✅ 完整 | ✅ |
 | JavaScript | [javascript](javascript/README.md) | ✅ 完整 | ✅ |
 | TypeScript | [typescript](typescript/README.md) | ✅ 完整 | ✅ |
-| Shell | [scripts/shell](scripts/shell/README.md) | 🚧 部分主题 | ✅ |
+| Shell | [scripts/shell](scripts/shell/README.md) | ✅ 完整 | ✅ |
 | SQL | [sql](sql/README.md) | ✅ 完整 | ✅ |
 
 ## 主题覆盖矩阵
@@ -35,7 +35,7 @@
 | Rust | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | JavaScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ |
 | TypeScript | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Shell | — | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ➖ | — | — | — | — | — | ➖ | — |
+| Shell | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅ | ➖ | — |
 | SQL | ➖ | ✅ | ✅ | ✅ | ✅ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ | ➖ | ➖ | ✅ |
 
 > 矩阵为手动维护：完成一个主题就更新对应单元格。
