@@ -1,5 +1,3 @@
-import java.util.List;
-
 /*
  * 主题说明：Java 泛型 —— 泛型方法 <T>、泛型类 Box<T>、有界类型参数
  *           <T extends Comparable<T>>，以及通配符 ? extends / ? super 的用途。
@@ -10,6 +8,9 @@ import java.util.List;
  *   最大值 = cherry （字典序）
  *   sum(List<? extends Number>) = 6.0
  */
+
+import java.util.List;
+
 public class GenericDemo {
 
     // 知识点 1：泛型方法 —— <T> 写在返回类型前，T 由调用处的实参推断

@@ -1,11 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
 /*
  * 主题说明：Java 集合 —— 数组与 Arrays 工具类、ArrayList / LinkedList / HashSet，
  *           以及 for / for-each / 迭代器 / forEach 四种遍历方式的对比。
@@ -15,6 +7,15 @@ import java.util.Set;
  *   LinkedList 同样是 List，可以当队列用: 头=甲 尾=丙
  *   HashSet 去重后大小 = 3，无序不重复
  */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 public class CollectionDemo {
 
     public static void main(String[] args) {

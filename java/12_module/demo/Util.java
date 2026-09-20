@@ -1,5 +1,3 @@
-package demo;
-
 /*
  * 主题说明：同包工具类 Util —— 与 ModuleDemo 同在 demo 包，演示 Java 的
  *           四种可见性：public / protected / 默认（包私有）/ private。
@@ -11,6 +9,9 @@ package demo;
  * 单文件运行约束：用 java xxx.java 直跑时，文件路径末尾目录必须与 package 名一致
  *（本文件声明 package demo，因此位于 demo/ 子目录）；被入口类引用时会按需一起编译。
  */
+
+package demo;
+
 public class Util {
 
     /** public 字段：任何包的任何类都能访问 */

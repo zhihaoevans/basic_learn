@@ -35,5 +35,5 @@ jobs:
               npx tsx "$f"
             done
           else
-            echo "暂无 TypeScript 示例，空转通过（Phase 2 落地后自动生效）"
+            echo "暂无 TypeScript 示例（示例文件被删除时），空转通过"
           fi

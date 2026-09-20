@@ -3,9 +3,9 @@
 // 运行命令：node javascript/08_map.js
 // 预期输出（关键行）：
 //   get('name') -> Li ；has(42) -> true ；size = 3
-//   Map 遍历保持插入顺序：name Li / 42 answer / true yes
+//   Map 遍历保持插入顺序： name Li / 42 answer / true yes（三行，前缀相同）
 //   Object.keys -> [ 'b', 'a' ]
-//   对象里 42 会先于字符串键出现：[ '1', 'x' ]
+//   对象里 1 会先于字符串键出现： [ '1', 'x' ]
 
 // 知识点 1：Map —— 任意类型的键、保持插入顺序、size 直接可得
 const m = new Map();
@@ -39,7 +39,7 @@ for (const [k, v] of Object.entries(conf)) {
 }
 
 // 知识点 5：对象键的本质 —— 非字符串键会被转成字符串，且"整数样"的键会排到最前
-console.log('对象里 42 会先于字符串键出现：', Object.keys({ 1: '一', x: '叉' }));
+console.log('对象里 1 会先于字符串键出现：', Object.keys({ 1: '一', x: '叉' }));
 
 // 知识点 6：选型建议 —— 固定结构的实体用对象；动态键值对（尤其中文以外的键、需要顺序）用 Map
 console.log('普通对象 -> 结构固定；Map -> 动态字典的首选');

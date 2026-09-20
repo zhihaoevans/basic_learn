@@ -1,8 +1,3 @@
-package demo;
-
-import static demo.Util.APP_NAME;        // 静态导入字段：之后直接写 APP_NAME，不用 Util.APP_NAME
-import static demo.Util.version;         // 静态导入方法：直接调用 version()
-
 /*
  * 主题说明：Java 的包（package）与可见性 —— 包是类的组织单位（对应目录结构），
  *           本例与同包的 Util.java 一起演示 public / protected / 包私有 / private
@@ -11,7 +6,7 @@ import static demo.Util.version;         // 静态导入方法：直接调用 ve
  * 预期输出（关键行）：
  *   [1] 包名 = demo
  *   [2] 静态导入字段: APP_NAME = demo-util
- *   [4] private 成员包外不可见，只能通过 Util 的公开方法间接访问
+ *   [4] private 成员类外不可见（同包也不可访问），只能通过 Util 的公开方法间接访问
  *
  * 单文件运行约束（重点说明）：
  *   1) java 单文件直跑时，源文件路径的末级目录必须与 package 声明一致 ——
@@ -21,6 +16,12 @@ import static demo.Util.version;         // 静态导入方法：直接调用 ve
  *      会被自动按需编译，无需手动 javac；
  *   3) 传统方式则是先 javac -d out 编译再 java -cp out demo.ModuleDemo。
  */
+
+package demo;
+
+
+import static demo.Util.APP_NAME;        // 静态导入字段：之后直接写 APP_NAME，不用 Util.APP_NAME
+import static demo.Util.version;         // 静态导入方法：直接调用 version()
 public class ModuleDemo {
 
     public static void main(String[] args) {
@@ -39,7 +40,7 @@ public class ModuleDemo {
         System.out.println("[3c] 包私有: Util.packageOnly() -> " + Util.packageOnly());
         // private：只属于 Util 自己 —— 下面这行取消注释会编译报错：
         // System.out.println(Util.SECRET);   // 错误: SECRET 在 demo.Util 中是 private 的
-        System.out.println("[4] private 成员包外不可见，只能通过 Util 的公开方法间接访问");
+        System.out.println("[4] private 成员类外不可见（同包也不可访问），只能通过 Util 的公开方法间接访问");
 
         // 知识点 5：普通 import —— 使用其他包的类时引入全限定名（本文件顶部已示范）：
         // import java.util.List; 之后即可写 List<String> 而不用 java.util.List<String>

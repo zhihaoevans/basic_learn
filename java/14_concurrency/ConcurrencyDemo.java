@@ -1,9 +1,3 @@
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
 /*
  * 主题说明：Java 并发入门 —— 创建线程的两种方式（继承 Thread / 实现 Runnable）、
  *           线程池 ExecutorService 与 Future 取结果、synchronized 修复
@@ -15,6 +9,13 @@ import java.util.concurrent.TimeUnit;
  *   未同步计数 = xxxxx（通常 < 100000，丢更新）
  *   synchronized 计数 = 100000（永远正确）
  */
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 public class ConcurrencyDemo {
 
     // 两个线程共享的对象 —— 演示数据可见性与竞态

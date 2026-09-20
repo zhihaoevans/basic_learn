@@ -6,7 +6,7 @@
 //   replaceAll 后 -> a+b+c
 //   padStart(3, '0') -> 007
 //   split 后 -> [ 'a', 'b', 'c' ]
-//   '中' 的字符编码 -> 20013（0x4e2d）
+//   '中' 的字符编码 -> 20013 （0x4e2d）
 
 const s = 'Hello, JavaScript!';
 

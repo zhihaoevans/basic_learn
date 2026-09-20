@@ -1,8 +1,3 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
-
 /*
  * 主题说明：Java 的 Map（键值对）—— HashMap 增删改查与遍历、getOrDefault 默认值，
  *           TreeMap 按键排序、LinkedHashMap 保持插入顺序。
@@ -12,6 +7,12 @@ import java.util.TreeMap;
  *   getOrDefault: 没有的键返回默认值 -> 未知
  *   TreeMap 按键排序: {apple=1, banana=2, cherry=3}
  */
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class MapDemo {
 
     public static void main(String[] args) {

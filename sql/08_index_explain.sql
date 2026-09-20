@@ -12,7 +12,6 @@
 
 -- 幂等：清掉上次运行留下的演示索引，保证每次都能看到「建索引前」的真实计划
 DROP INDEX IF EXISTS idx_students_city;
-DROP INDEX IF EXISTS idx_scores_student;
 DROP INDEX IF EXISTS idx_scores_student_score;
 DROP INDEX IF EXISTS idx_scores_course;
 

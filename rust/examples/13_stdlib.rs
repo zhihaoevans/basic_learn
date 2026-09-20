@@ -3,7 +3,7 @@
 // 运行命令：cargo run --example 13_stdlib
 // 预期输出（关键行）：
 //   保留的长单词 = ["quick", "brown", "jumps"]
-//   耗时 xx ms，累加结果 = 499999500000
+//   耗时 x.xxms 量级（因机器而异），累加结果 = 499999500000
 //   启动参数个数 = 1
 
 use std::collections::HashMap;

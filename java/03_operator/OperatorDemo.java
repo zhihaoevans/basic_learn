@@ -5,6 +5,7 @@
  * 预期输出（关键行）：
  *   整数除法 7 / 2 = 3 （直接舍去小数）
  *   取余 7 % 2 = 1
+ *   ~5 = -6 （按位取反：~x = -x - 1）
  *   短路: 右侧没有被执行
  */
 public class OperatorDemo {
@@ -46,6 +47,7 @@ public class OperatorDemo {
         System.out.println("[5] 12 & 10 = " + (x & y) + " （1000，按位与）");
         System.out.println("    12 | 10 = " + (x | y) + " （1110，按位或）");
         System.out.println("    12 ^ 10 = " + (x ^ y) + " （0110，异或：不同为 1）");
+        System.out.println("    ~5      = " + (~5) + " （按位取反：~x = -x - 1）");
         System.out.println("    1 << 4  = " + (1 << 4) + " （左移相当于乘 2 的 4 次方）");
         System.out.println("    -16 >> 2 = " + (-16 >> 2) + " （带符号右移，保留负号）");
         System.out.println("    -1 >>> 28 = " + (-1 >>> 28) + " （无符号右移，高位补 0）");

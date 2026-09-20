@@ -22,7 +22,7 @@ fn main() {
     // ---- Result：Ok / Err 两个分支 ----
     let ok = "3,14".parse::<i32>();
     match ok {
-        Ok(n) => println!("解析 \"3,14\" 成功：{}", n),
+        Ok(n) => println!("若解析成功将打印（此例必走 Err）：{}", n),
         Err(e) => println!("解析失败：{}", e),
     }
 

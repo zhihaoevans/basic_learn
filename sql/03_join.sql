@@ -58,7 +58,7 @@ INSERT INTO emp_demo (id, name, manager_id) VALUES
 
 -- 同一张表起两个别名，当成"员工表"和"上级表"两张表用
 SELECT e.name AS "员工",
-       IFNULL(m.name, '（无上级）') AS "上级"    -- IFNULL：NULL 时给默认值
+       IFNULL(m.name, '（无上级）') AS "上级"    -- 【SQLite 方言】IFNULL：NULL 时给默认值（标准 SQL 写 COALESCE）
 FROM emp_demo e
 LEFT JOIN emp_demo m ON e.manager_id = m.id    -- 必须用 LEFT JOIN，否则校长（上级为 NULL）会丢失
 ORDER BY e.id;

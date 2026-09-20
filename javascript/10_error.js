@@ -5,7 +5,7 @@
 //   TypeError: Cannot read properties of null (reading 'foo')
 //   finally 总会执行
 //   自定义错误 ValidationError: age 不合法（字段：age）
-//   异步错误被 catch 住：网络超时
+//   异步错误被 catch 住： 网络超时
 
 // 知识点 1：常见内置 Error 子类型 —— TypeError（类型用错）、RangeError、SyntaxError（如 JSON 解析失败）
 try {

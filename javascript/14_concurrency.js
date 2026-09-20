@@ -2,7 +2,7 @@
 //           Promise.all / allSettled，以及串行 await 与并行 all 的计时对比。
 // 运行命令：node javascript/14_concurrency.js
 // 预期输出（关键行）：
-//   Promise 链结果：20
+//   Promise 链结果： 20
 //   async/await -> 用户7
 //   串行 3 个任务约 150ms；并行 Promise.all 约 50ms —— 并行快 3 倍左右
 //   allSettled: [ 'fulfilled: ok', 'rejected: boom', 'fulfilled: slow ok' ]

@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /*
  * 主题说明：Java 异常处理 —— try/catch/finally、多 catch、异常层级（受检 vs 非受检）、
  *           throw/throws、自定义异常与 try-with-resources 自动关闭资源。
@@ -9,6 +7,9 @@ import java.io.IOException;
  *   finally 总会执行（无论是否异常）
  *   自定义异常: 取款失败: 余额不足，差 30.0 元
  */
+
+import java.io.IOException;
+
 public class ErrorDemo {
 
     /** 自定义异常：继承 Exception 成为受检异常，构造器把消息传给 super */

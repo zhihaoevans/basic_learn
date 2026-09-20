@@ -21,6 +21,8 @@ cargo run --example 01_hello
 
 一次性运行全部示例（与 CI 的验证方式相同）：
 
+在仓库根目录执行：
+
 ```bash
 for ex in rust/examples/*.rs; do n=$(basename "$ex" .rs); echo "== $n"; cargo run -q --manifest-path rust/Cargo.toml --example "$n"; done
 ```

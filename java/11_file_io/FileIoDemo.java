@@ -1,10 +1,3 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 /*
  * 主题说明：Java 文件读写 —— Files.writeString/readString 一写一读、
  *           BufferedReader 逐行读取、java.io.File 遍历目录；临时文件用
@@ -15,6 +8,14 @@ import java.nio.file.Path;
  *   BufferedReader 逐行读到 3 行
  *   目录内文件数 = 3
  */
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class FileIoDemo {
 
     public static void main(String[] args) throws IOException {

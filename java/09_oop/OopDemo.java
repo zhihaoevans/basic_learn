@@ -5,7 +5,8 @@
  * 运行命令：java java/09_oop/OopDemo.java
  * 预期输出（关键行）：
  *   [3] 汪汪！小狗 4 岁
- *   [5] 接口 default: 我会狗刨
+ *   [5] 实现接口抽象方法: 我会狗刨
+ *   [5] 接口 default: 我能漂在水上
  *   instanceof 模式匹配: 它是小狗，毛色 = 白色
  */
 public class OopDemo {
@@ -103,7 +104,7 @@ class Dog extends Animal implements Swimmer {
 
     @Override
     public void swim() {
-        System.out.println("[5] 接口 default: 我会狗刨");
+        System.out.println("[5] 实现接口抽象方法: 我会狗刨");
         float_();                                   // 继承自接口的 default 方法
     }
 }

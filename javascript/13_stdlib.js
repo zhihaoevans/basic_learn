@@ -6,8 +6,9 @@
 //   Math：max=7 ；round(4.5)=5 ；floor(-4.5)=-5 ；sqrt(144)=12
 //   UTC 日期 -> 2026-09-19 08:30:00
 //   Intl 货币 -> ¥1,234.50
-//   URL 解析 -> protocol=https: ；pathname=/a/b ；x=1
-//   深拷贝后原对象不受影响 -> [ 1, 2 ]
+//   URL 解析 -> protocol=https: ；pathname=/a/b ；port=8080 ；hash=#top
+//   查询参数 -> x=1 ；y=中
+//   深拷贝后原对象不受影响 -> [ 1, 2 ] true
 
 // 知识点 1：JSON —— stringify 序列化（可缩进）、parse 反序列化
 const conf = { name: 'Li', tags: ['a', 'b'], nested: { ok: true } };

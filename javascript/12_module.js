@@ -7,7 +7,7 @@
 //   常量导入：PI_APPROX = 3.14159
 //   默认导入（可随意命名）：circleArea(2) = 12.56636
 //   换名导入：plus(10, 1) = 11
-//   命名空间导入：circleArea 是 function
+//   命名空间导入：circleArea 是 function ；共导出 5 个名字
 
 // 知识点 1：命名导入 { } —— 名字必须与导出一致；默认导入不带花括号、可任意命名
 import circleArea, { add, multiply, PI_APPROX } from './lib/math_utils.js';

@@ -6,7 +6,7 @@
 //   异步写入并读回 -> "第 1 行\n第 2 行\n追加的行\n"
 //   同步读回 -> 第 1 行
 //   逐行读取 -> 1: 第 1 行
-//   临时文件已清理：true
+//   临时文件已清理： true
 
 import { writeFile, readFile, appendFile, rm } from 'node:fs/promises';
 import { writeFileSync, readFileSync, createReadStream, existsSync } from 'node:fs';

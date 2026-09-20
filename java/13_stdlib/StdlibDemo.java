@@ -1,11 +1,3 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 /*
  * 主题说明：Java 常用标准库速览 —— Optional 优雅处理可能为空的值、
  *           Arrays 工具（asList/sort/stream）、日期时间（LocalDate/LocalDateTime）、
@@ -17,6 +9,15 @@ import java.util.Optional;
  *   排序后: [1, 2, 3, 5, 9]，最大值 = 9
  *   今天: 2026-（运行当天日期）
  */
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
 public class StdlibDemo {
 
     public static void main(String[] args) {

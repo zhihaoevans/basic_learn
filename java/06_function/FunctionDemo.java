@@ -1,6 +1,3 @@
-import java.util.function.Function;
-import java.util.function.Predicate;
-
 /*
  * 主题说明：Java 的"函数"（方法）—— 定义与重载、可变参数、返回值，
  *           以及 Lambda 表达式（Function/Predicate 函数式接口）与方法引用。
@@ -12,6 +9,10 @@ import java.util.function.Predicate;
  *   Predicate 判断: abc 是不是长度>2 -> true
  *   方法引用转大写: ABC
  */
+
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class FunctionDemo {
 
     // 知识点 1：方法定义 —— 修饰符 返回类型 方法名(参数列表)
