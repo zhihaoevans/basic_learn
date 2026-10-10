@@ -58,7 +58,7 @@
 ## 其他语言与工具示例
 
 - [assembly](assembly/README.md) - 汇编语言示例
-- swift/ - Swift 示例项目（本地项目，未纳入版本管理）
+- [swift](swift/) - Swift 示例项目（运行方式以目录内容为准）
 - [lua](lua/learnlua.lua) - Lua 示例
 - [scripts/sed](scripts/sed/README.md) - sed 示例
 - [build_systems/makefile](build_systems/makefile/README.md) - Makefile 模板
@@ -78,3 +78,31 @@
 ## Web
 
 - [web/frontend](web/frontend) - 前端示例与练习（Vue3 工程）
+
+## 最小运行示例
+
+先克隆仓库，再按语言目录安装对应工具；本仓库没有涵盖所有语言的统一运行环境。
+
+```bash
+git clone https://github.com/zhihaoevans/basic_learn.git
+cd basic_learn
+cmake -S cpp/basics -B build/cpp-basics
+cmake --build build/cpp-basics
+./build/cpp-basics/01_hello
+```
+
+此示例需要 CMake 3.16+ 与支持 C++17 的编译器；上面的可执行文件路径对应 Linux/macOS 的常见单配置构建。其他语言的命令见各目录 README。
+
+## 按工程目标选择入口
+
+| 目标 | 入口 |
+| --- | --- |
+| 对照学习语言基础 | [TOPICS.md](TOPICS.md) · [C++](cpp/README.md) · [Python](python/README.md) · [Go](golang/README.md) |
+| 学习内存错误定位 | [C Sanitizers](c/sanitizers/README.md) |
+| 学习调试与底层 | [GDB 笔记](docs/gdb/) · [汇编示例](assembly/README.md) |
+| 参考构建工具 | [Makefile 模板](build_systems/makefile/README.md) |
+| Web 练习 | [Web 前端](web/frontend/) |
+
+## 新增示例
+
+按 [主题清单](TOPICS.md)选择主题，在对应语言目录补充最小可运行例子，并注明环境、命令和预期输出。涉及新依赖时同步更新相关 [CI 工作流](.github/workflows/)。表格与 CI 状态是文档中的维护记录，实际运行结果以当前提交的检查为准。
