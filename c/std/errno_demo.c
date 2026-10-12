@@ -217,7 +217,7 @@ void demo_memory_errors(void) {
     
     // 尝试分配大量内存（可能失败）
     errno = 0;
-    size_t huge_size = SIZE_MAX / 2;  // 尝试分配很大的内存
+    size_t huge_size = SIZE_MAX;  // 请求不可表示为有效对象的最大尺寸，确定触发分配失败
     ptr = malloc(huge_size);
     if (ptr != NULL) {
         printf("分配大量内存成功（意外！）\n");

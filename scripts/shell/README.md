@@ -17,8 +17,9 @@ Shell（本目录以 Bash 方言为准）是 Unix 世界最常用的命令行解
 
 ```bash
 bash scripts/shell/hello/hello.sh          # 运行任意示例
-# CI 同款全量门禁：逐个运行全部脚本，退出码非 0 即 FAIL
-find scripts/shell -name '*.sh' | sort | while read -r f; do bash "$f" >/dev/null 2>&1 || echo "FAIL: $f"; done
+# CI 同款门禁：逐个运行独立示例，并对模块/旧辅助脚本做语法检查
+while IFS= read -r f; do if grep -q '^# 主题说明：' "$f"; then bash "$f"; fi; done < <(find scripts/shell -name '*.sh' | sort)
+find scripts/shell -name '*.sh' -print0 | xargs -0 -n1 bash -n
 ```
 
 ## 主题索引
@@ -42,7 +43,7 @@ find scripts/shell -name '*.sh' | sort | while read -r f; do bash "$f" >/dev/nul
 | 15 generic | — | — | ➖ Shell 无泛型概念 |
 | + 特色 | [test_file/test_file.sh](test_file/test_file.sh) | `bash scripts/shell/test_file/test_file.sh` | 文件测试内建（-e/-f/-d/-r 等判定） |
 
-> 目录内另有早期示例：`test.sh`（入门综合脚本），以及 `variable/`、`operator/`、`proc_ctrl/` 下的多个补充文件，均随 CI 门禁一起运行。
+> 目录内另有早期示例：`test.sh`（依赖特定硬件工具 `lspci`/`ifconfig`，仅做语法检查）、`test_file/test_file.sh`（文件测试速查表），以及 `variable/`、`operator/`、`proc_ctrl/` 下的多个补充脚本。CI 运行带主题说明的独立示例，并对所有脚本做语法检查；关联数组示例需 Bash 4+ 才能运行。
 
 ## 进阶专题
 

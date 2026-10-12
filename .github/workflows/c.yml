@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'c/**'
+      - 'TOPICS.md'
       - '.github/workflows/c.yml'
   pull_request:
     paths:
       - 'c/**'
+      - 'TOPICS.md'
       - '.github/workflows/c.yml'
   workflow_dispatch:
 
@@ -26,6 +28,9 @@ jobs:
 
       - name: Run every example
         run: |
+          shopt -s nullglob
+          binaries=(c/build/bin/*)
+          test "${#binaries[@]}" -gt 0
           for b in c/build/bin/*; do
             echo "== $b =="
             "$b"

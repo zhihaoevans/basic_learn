@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'sql/**'
+      - 'TOPICS.md'
       - '.github/workflows/sql.yml'
   pull_request:
     paths:
       - 'sql/**'
+      - 'TOPICS.md'
       - '.github/workflows/sql.yml'
   workflow_dispatch:
 
@@ -21,15 +23,12 @@ jobs:
       # sql/ 目录已随 Phase 2 落地（seed.sql 建样例库 + 每主题一个 .sql）；compgen 兜底空转分支保留
       - name: Run every example
         run: |
-          if compgen -G "sql/*.sql" > /dev/null; then
-            rm -f sql/db.sqlite
-            if [ -f sql/seed.sql ]; then
-              sqlite3 sql/db.sqlite < sql/seed.sql
-            fi
-            for f in sql/[0-9]*.sql; do
-              echo "== $f =="
-              sqlite3 sql/db.sqlite < "$f"
-            done
-          else
-            echo "暂无 SQL 示例（示例文件被删除时），空转通过"
-          fi
+          test -f sql/seed.sql
+          mapfile -t examples < <(find sql -maxdepth 1 -name '[0-9]*.sql' | sort)
+          test "${#examples[@]}" -gt 0
+          database="$RUNNER_TEMP/basic-learn-sql.sqlite"
+          sqlite3 "$database" < sql/seed.sql
+          for f in "${examples[@]}"; do
+            echo "== $f =="
+            sqlite3 "$database" < "$f"
+          done

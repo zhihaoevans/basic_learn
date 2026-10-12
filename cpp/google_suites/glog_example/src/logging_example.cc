@@ -16,6 +16,7 @@ static void setup_logging(const std::string& dir) {
 int main(int argc, char** argv) {
   std::string log_dir = "logs";
   if (argc > 1) log_dir = argv[1];
+  int rolling_messages = argc > 2 ? std::stoi(argv[2]) : 50000;
   setup_logging(log_dir);
 
   LOG(INFO) << "info message";
@@ -26,7 +27,7 @@ int main(int argc, char** argv) {
   LOG_IF(INFO, x > 3) << "conditional info when x>3";
   LOG_IF(WARNING, x % 2 == 1) << "conditional warning when x is odd";
 
-  for (int i = 0; i < 50000; ++i) {
+  for (int i = 0; i < rolling_messages; ++i) {
     LOG(INFO) << "rolling " << i;
   }
 

@@ -5,11 +5,13 @@ on:
     paths:
       - 'python/**'
       - 'languages/python/**'
+      - 'TOPICS.md'
       - '.github/workflows/python.yml'
   pull_request:
     paths:
       - 'python/**'
       - 'languages/python/**'
+      - 'TOPICS.md'
       - '.github/workflows/python.yml'
   workflow_dispatch:
 
@@ -23,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       # python/ 下的基础语法示例（NN_*.py）已纳入 CI：纯标准库，逐个运行要求退出码 0；
       # ai、matplotlib、scapy、scrapy、chapters 专题依赖第三方库，暂不入 CI
@@ -32,6 +34,9 @@ jobs:
 
       - name: Run python basics examples
         run: |
+          shopt -s nullglob
+          examples=(python/[0-9]*.py)
+          test "${#examples[@]}" -gt 0
           for f in python/[0-9]*.py; do
             echo "== $f =="
             python3 "$f"

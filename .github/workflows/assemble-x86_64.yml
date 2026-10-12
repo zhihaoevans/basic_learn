@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'assembly/**'
+      - 'TOPICS.md'
       - '.github/workflows/assemble-x86_64.yml'
   pull_request:
     paths:
       - 'assembly/**'
+      - 'TOPICS.md'
       - '.github/workflows/assemble-x86_64.yml'
   workflow_dispatch:
 
@@ -18,10 +20,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install GNU binutils
+        run: sudo apt-get update && sudo apt-get install -y binutils
+
       - name: Build x86_64 examples
         run: make -C assembly/x86_64
 
       - name: Smoke run
         run: |
           ./assembly/x86_64/01_basics/hello_write
-          ./assembly/x86_64/01_basics/exit_code || true
+          set +e
+          ./assembly/x86_64/01_basics/exit_code
+          status=$?
+          set -e
+          test "$status" -eq 42

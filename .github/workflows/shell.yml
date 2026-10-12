@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'scripts/shell/**'
+      - 'TOPICS.md'
       - '.github/workflows/shell.yml'
   pull_request:
     paths:
       - 'scripts/shell/**'
+      - 'TOPICS.md'
       - '.github/workflows/shell.yml'
   workflow_dispatch:
 
@@ -18,9 +20,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run every script
+      - name: Run standalone examples and syntax-check helpers
         run: |
-          find scripts/shell -name '*.sh' | sort | while read -r f; do
+          count=0
+          while IFS= read -r f; do
             echo "== $f =="
             bash "$f"
-          done
+            count=$((count + 1))
+          done < <(grep -rl '^# 主题说明：' scripts/shell --include='*.sh' | sort)
+          test "$count" -gt 0
+          find scripts/shell -name '*.sh' -print0 | xargs -0 -n1 bash -n

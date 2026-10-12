@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'lua/**'
+      - 'TOPICS.md'
       - '.github/workflows/lua.yml'
   pull_request:
     paths:
       - 'lua/**'
+      - 'TOPICS.md'
       - '.github/workflows/lua.yml'
   workflow_dispatch:
 
@@ -25,7 +27,9 @@ jobs:
 
       - name: Run every example
         run: |
-          find lua -name '*.lua' | sort | while read -r f; do
+          mapfile -t examples < <(find lua -name '*.lua' | sort)
+          test "${#examples[@]}" -gt 0
+          for f in "${examples[@]}"; do
             echo "== $f =="
             lua5.4 "$f"
           done

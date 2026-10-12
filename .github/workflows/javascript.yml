@@ -6,12 +6,14 @@ on:
       - 'javascript/**'
       - 'languages/javascript/**'
       - 'web/frontend/**'
+      - 'TOPICS.md'
       - '.github/workflows/javascript.yml'
   pull_request:
     paths:
       - 'javascript/**'
       - 'languages/javascript/**'
       - 'web/frontend/**'
+      - 'TOPICS.md'
       - '.github/workflows/javascript.yml'
   workflow_dispatch:
 
@@ -32,6 +34,9 @@ jobs:
 
       - name: Run javascript basics examples
         run: |
+          shopt -s nullglob
+          examples=(javascript/*.js)
+          test "${#examples[@]}" -gt 0
           for f in javascript/*.js; do
             echo "== $f =="
             node "$f"

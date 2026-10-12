@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'cpp/**'
+      - 'TOPICS.md'
       - '.github/workflows/cpp.yml'
   pull_request:
     paths:
       - 'cpp/**'
+      - 'TOPICS.md'
       - '.github/workflows/cpp.yml'
   workflow_dispatch:
 
@@ -24,6 +26,9 @@ jobs:
         run: |
           cmake -S cpp/basics -B cpp/basics/build
           cmake --build cpp/basics/build -j"$(nproc)"
+          shopt -s nullglob
+          binaries=(cpp/basics/build/*)
+          test "${#binaries[@]}" -gt 0
           for b in cpp/basics/build/*; do
             [ -f "$b" ] && [ -x "$b" ] || continue
             echo "== $b =="
@@ -34,6 +39,9 @@ jobs:
         run: |
           cmake -S cpp/cpptest -B cpp/cpptest/build
           cmake --build cpp/cpptest/build -j"$(nproc)"
+          shopt -s nullglob
+          binaries=(cpp/cpptest/build/*)
+          test "${#binaries[@]}" -gt 0
           for b in cpp/cpptest/build/*; do
             [ -f "$b" ] && [ -x "$b" ] || continue
             echo "== $b =="
@@ -50,10 +58,10 @@ jobs:
         run: |
           cmake -S cpp/google_suites/benchmark_example -B cpp/google_suites/benchmark_example/build
           cmake --build cpp/google_suites/benchmark_example/build -j"$(nproc)"
-          cpp/google_suites/benchmark_example/build/bench_suite
+          cpp/google_suites/benchmark_example/build/bench_suite --benchmark_min_time=0.001s --benchmark_repetitions=1 --benchmark_report_aggregates_only=true
 
       - name: Build and run glog example
         run: |
           cmake -S cpp/google_suites/glog_example -B cpp/google_suites/glog_example/build
           cmake --build cpp/google_suites/glog_example/build -j"$(nproc)"
-          cpp/google_suites/glog_example/build/logging_example
+          cpp/google_suites/glog_example/build/logging_example "$RUNNER_TEMP/basic-learn-glog" 100

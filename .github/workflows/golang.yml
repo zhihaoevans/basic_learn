@@ -5,11 +5,13 @@ on:
     paths:
       - 'golang/**'
       - 'languages/go/**'
+      - 'TOPICS.md'
       - '.github/workflows/golang.yml'
   pull_request:
     paths:
       - 'golang/**'
       - 'languages/go/**'
+      - 'TOPICS.md'
       - '.github/workflows/golang.yml'
   workflow_dispatch:
 

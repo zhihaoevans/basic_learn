@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'typescript/**'
+      - 'TOPICS.md'
       - '.github/workflows/typescript.yml'
   pull_request:
     paths:
       - 'typescript/**'
+      - 'TOPICS.md'
       - '.github/workflows/typescript.yml'
   workflow_dispatch:
 
@@ -26,14 +28,14 @@ jobs:
       # typescript/ 目录已随 Phase 2 落地（src/ 每主题一个 .ts）；compgen 兜底空转分支保留
       - name: Run every example
         run: |
-          if compgen -G "typescript/src/*.ts" > /dev/null; then
-            cd typescript
-            npm ci --no-audit --no-fund
-            npx --package typescript tsc --noEmit
-            for f in src/*.ts; do
-              echo "== $f =="
-              npx tsx "$f"
-            done
-          else
-            echo "暂无 TypeScript 示例（示例文件被删除时），空转通过"
-          fi
+          test -f typescript/package-lock.json
+          shopt -s nullglob
+          examples=(typescript/src/*.ts)
+          test "${#examples[@]}" -gt 0
+          cd typescript
+          npm ci --no-audit --no-fund
+          npx --package typescript tsc --noEmit
+          for f in src/*.ts; do
+            echo "== $f =="
+            npx tsx "$f"
+          done

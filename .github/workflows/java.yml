@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - 'java/**'
+      - 'TOPICS.md'
       - '.github/workflows/java.yml'
   pull_request:
     paths:
       - 'java/**'
+      - 'TOPICS.md'
       - '.github/workflows/java.yml'
   workflow_dispatch:
 
@@ -28,7 +30,9 @@ jobs:
       # JDK 11+ 单文件源码直运行，无需 javac/构建工具
       - name: Run every example
         run: |
-          find java -name '*.java' | sort | while read -r f; do
+          mapfile -t examples < <(find java -name '*.java' | sort)
+          test "${#examples[@]}" -gt 0
+          for f in "${examples[@]}"; do
             echo "== $f =="
             java "$f"
           done

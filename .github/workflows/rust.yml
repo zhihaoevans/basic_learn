@@ -5,11 +5,13 @@ on:
     paths:
       - 'rust/**'
       - 'languages/rust/**'
+      - 'TOPICS.md'
       - '.github/workflows/rust.yml'
   pull_request:
     paths:
       - 'rust/**'
       - 'languages/rust/**'
+      - 'TOPICS.md'
       - '.github/workflows/rust.yml'
   workflow_dispatch:
 
@@ -31,6 +33,9 @@ jobs:
 
       - name: Run rust/examples basics
         run: |
+          shopt -s nullglob
+          examples=(rust/examples/*.rs)
+          test "${#examples[@]}" -gt 0
           for ex in rust/examples/*.rs; do
             name=$(basename "$ex" .rs)
             echo "== $name =="

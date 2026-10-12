@@ -22,7 +22,7 @@
 
 ## 运行与配置
 - 运行：
-  - ./build/logging_example [log_dir]
+  - ./build/logging_example [log_dir] [rolling_messages]（默认写入 50000 条日志）
 - 展示点：
   - 日志分级（INFO/WARNING/ERROR）
   - 条件日志（LOG_IF）
